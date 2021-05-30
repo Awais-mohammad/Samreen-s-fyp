@@ -38,12 +38,13 @@ h3 {
   margin-left: 20px;
 }
 p {
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: "robboto";
   font-weight: bold;
   font-size: 20px;
   transition: 0.1s;
   margin-top: 25px;
-  color: rgba(0, 0, 0, 0.548);
+  padding: 4px;
+  color: black;
 }
 .i {
   position: relative;
@@ -53,7 +54,7 @@ p {
 }
 
 p:hover {
-  padding: 10px;
+ 
   cursor: pointer;
   border-left: 4px solid purple;
   background: rgba(112, 8, 65, 0.185);
