@@ -1,0 +1,556 @@
+<app-main-nav>
+    <div *ngIf="currentDiv=='Dashboard'" class="body">
+
+        <mat-card class="card">
+            <div class="cardheader">
+                Manage Admins
+            </div>
+            <img src="https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGFkbWlufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                alt="">
+
+            <div style="margin-top: 15px;text-align: center;justify-content: center;display: flex;">
+                <button (click)="manage('Admin')" style="width: 50%;font-family: Open-Sans;" mat-flat-button
+                    color="primary">
+                    MANAGE
+                </button>
+            </div>
+
+        </mat-card>
+
+        <mat-card class="card">
+            <div class="cardheader">
+                Manage Co-ordinators
+            </div>
+            <img src="../../assets/coodinator.png" alt="">
+
+            <div style="margin-top: 15px;text-align: center;justify-content: center;display: flex;">
+                <button (click)="manage('Co-ordinator')" style="width: 50%;font-family: Open-Sans;" mat-flat-button
+                    color="primary">
+                    MANAGE
+                </button>
+            </div>
+
+        </mat-card>
+
+        <mat-card class="card">
+            <div class="cardheader">
+                Manage Supervisors
+            </div>
+            <img src="../../assets/supervisor.png" alt="">
+
+            <div style="margin-top: 15px;text-align: center;justify-content: center;display: flex;">
+                <button (click)="manage('Supervisor')" style="width: 50%;font-family: Open-Sans;" mat-flat-button
+                    color="primary">
+                    MANAGE
+                </button>
+            </div>
+
+        </mat-card>
+
+        <mat-card class="card">
+            <div class="cardheader">
+                Manage Evaluators
+            </div>
+            <img src="../../assets/evaluators.jpg" alt="">
+
+            <div style="margin-top: 15px;text-align: center;justify-content: center;display: flex;">
+                <button (click)="manage('Evaluator')" style="width: 50%;font-family: Open-Sans;" mat-flat-button
+                    color="primary">
+                    MANAGE
+                </button>
+            </div>
+
+        </mat-card>
+
+        <mat-card class="card">
+            <div class="cardheader">
+                Manage Staff
+            </div>
+            <img src="../../assets/staff.jpg" alt="">
+
+            <div style="margin-top: 15px;text-align: center;justify-content: center;display: flex;">
+                <button (click)="manage('Staff')" style="width: 50%;font-family: Open-Sans;" mat-flat-button
+                    color="primary">
+                    MANAGE
+                </button>
+            </div>
+
+        </mat-card>
+
+        <mat-card class="card">
+            <div class="cardheader">
+                Manage Students
+            </div>
+            <img src="../../assets/students.png" alt="">
+
+            <div style="margin-top: 15px;text-align: center;justify-content: center;display: flex;">
+                <button (click)="manage('Student')" style="width: 50%;font-family: Open-Sans;" mat-flat-button
+                    color="primary">
+                    MANAGE
+                </button>
+            </div>
+
+        </mat-card>
+
+
+
+    </div>
+
+
+    <div class="adminpage" *ngIf="currentDiv=='Admin'">
+
+
+        <mat-card>
+
+            <div class="df">
+
+                <h1 class="h1">
+                    {{currentDiv}} Details
+                </h1>
+
+                <button (click)="manage('Dashboard')" mat-mini-fab>
+                    <mat-icon>home</mat-icon>
+                </button>
+
+            </div>
+
+            <hr>
+
+            <div class="pt10">
+
+                <button (click)="openDialog('Admin')" color="accent" mat-flat-button>
+                    <mat-icon>add_circle</mat-icon>
+                    ADD NEW
+                </button>
+
+                <form>
+                    <input #search type="text" class="textbox" placeholder="Search">
+                    <input (click)="formtest()" title="Search" value="GO" type="submit" class="button">
+                </form>
+
+            </div>
+
+            <table>
+                <tr>
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+
+                </tr>
+                <tr *ngFor="let item of [].constructor(20)">
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+
+                </tr>
+
+            </table>
+
+        </mat-card>
+    </div>
+
+    <div class="adminpage" *ngIf="currentDiv=='Co-ordinator'">
+
+
+        <mat-card>
+
+            <div class="df">
+
+                <h1 class="h1">
+                    {{currentDiv}} Details
+                </h1>
+
+                <button (click)="manage('Dashboard')" mat-mini-fab>
+                    <mat-icon>home</mat-icon>
+                </button>
+
+            </div>
+
+            <hr>
+
+            <div class="pt10">
+
+                <button (click)="openDialog('Co-ordinator')" color="accent" mat-flat-button>
+                    <mat-icon>add_circle</mat-icon>
+                    ADD NEW
+                </button>
+
+                <form>
+                    <input #search type="text" class="textbox" placeholder="Search">
+                    <input (click)="formtest()" title="Search" value="GO" type="submit" class="button">
+                </form>
+
+            </div>
+
+            <table>
+                <tr>
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+
+                </tr>
+                <tr *ngFor="let item of [].constructor(20)">
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+
+                </tr>
+
+            </table>
+
+        </mat-card>
+    </div>
+
+    <div class="adminpage" *ngIf="currentDiv=='Staff'">
+
+
+        <mat-card>
+
+            <div class="df">
+
+                <h1 class="h1">
+                    {{currentDiv}} Details
+                </h1>
+
+                <button (click)="manage('Dashboard')" mat-mini-fab>
+                    <mat-icon>home</mat-icon>
+                </button>
+
+            </div>
+
+            <hr>
+
+            <div class="pt10">
+
+                <button (click)="openDialog('Staff')" color="accent" mat-flat-button>
+                    <mat-icon>add_circle</mat-icon>
+                    ADD NEW
+                </button>
+
+                <form>
+                    <input #search type="text" class="textbox" placeholder="Search">
+                    <input (click)="formtest()" title="Search" value="GO" type="submit" class="button">
+                </form>
+
+            </div>
+
+            <table>
+                <tr>
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+
+                </tr>
+                <tr *ngFor="let item of [].constructor(20)">
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+
+                </tr>
+
+            </table>
+
+        </mat-card>
+    </div>
+
+    <div class="adminpage" *ngIf="currentDiv=='Supervisor'">
+
+
+        <mat-card>
+
+            <div class="df">
+
+                <h1 class="h1">
+                    {{currentDiv}} Details
+                </h1>
+
+                <button (click)="manage('Dashboard')" mat-mini-fab>
+                    <mat-icon>home</mat-icon>
+                </button>
+
+            </div>
+
+            <hr>
+
+            <div class="pt10">
+
+                <button (click)="openDialog('Supervisor')" color="accent" mat-flat-button>
+                    <mat-icon>add_circle</mat-icon>
+                    ADD NEW
+                </button>
+
+                <form>
+                    <input #search type="text" class="textbox" placeholder="Search">
+                    <input (click)="formtest()" title="Search" value="GO" type="submit" class="button">
+                </form>
+
+            </div>
+
+            <table>
+                <tr>
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+
+                </tr>
+                <tr *ngFor="let item of [].constructor(20)">
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+
+                </tr>
+
+            </table>
+
+        </mat-card>
+    </div>
+
+    <div class="adminpage" *ngIf="currentDiv=='Evaluator'">
+
+
+        <mat-card>
+
+            <div class="df">
+
+                <h1 class="h1">
+                    {{currentDiv}} Details
+                </h1>
+
+                <button (click)="manage('Dashboard')" mat-mini-fab>
+                    <mat-icon>home</mat-icon>
+                </button>
+
+            </div>
+
+            <hr>
+
+            <div class="pt10">
+
+                <button (click)="openDialog('Evaluator')" color="accent" mat-flat-button>
+                    <mat-icon>add_circle</mat-icon>
+                    ADD NEW
+                </button>
+
+                <form>
+                    <input #search type="text" class="textbox" placeholder="Search">
+                    <input (click)="formtest()" title="Search" value="GO" type="submit" class="button">
+                </form>
+
+            </div>
+
+            <table>
+                <tr>
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+
+                </tr>
+                <tr *ngFor="let item of [].constructor(20)">
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+
+                </tr>
+
+            </table>
+
+        </mat-card>
+    </div>
+
+    <div class="adminpage" *ngIf="currentDiv=='Student'">
+
+
+        <mat-card>
+
+            <div class="df">
+
+                <h1 class="h1">
+                    {{currentDiv}} Details
+                </h1>
+
+                <button (click)="manage('Dashboard')" mat-mini-fab>
+                    <mat-icon>home</mat-icon>
+                </button>
+
+            </div>
+
+            <hr>
+
+            <div class="pt10">
+
+                <button (click)="openDialog('Student')" color="accent" mat-flat-button>
+                    <mat-icon>add_circle</mat-icon>
+                    ADD NEW
+                </button>
+
+                <form>
+                    <input #search type="text" class="textbox" placeholder="Search">
+                    <input (click)="formtest()" title="Search" value="GO" type="submit" class="button">
+                </form>
+
+            </div>
+
+            <table>
+                <tr>
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+                    <th class="tablehead">
+                        Firstname
+                    </th>
+
+
+                </tr>
+                <tr *ngFor="let item of [].constructor(20)">
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+
+                </tr>
+
+            </table>
+
+        </mat-card>
+    </div>
+
+</app-main-nav>

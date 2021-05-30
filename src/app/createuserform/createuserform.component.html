@@ -1,0 +1,53 @@
+<div class="body">
+
+    <div class="closeicon">
+        <mat-icon (click)="close()" style="color:red" matPrefix>cancel</mat-icon>
+    </div>
+
+    <img class="logo" src="../../assets/logo.png" alt="">
+    <h1 *ngIf="data">
+        Create {{data.user}}
+    </h1>
+
+    <mat-form-field class="field" color="primary" appearance="outline">
+        <mat-label class="noto">EMAIL</mat-label>
+        <mat-icon matPrefix>mail</mat-icon>
+        <input type="text" matInput placeholder="Placeholder">
+
+        <mat-hint style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">Enter your valid email</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="field" color="primary" appearance="outline">
+        <mat-label class="noto">Password</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input type="text" matInput placeholder="Placeholder">
+
+        <mat-hint style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">Enter your valid email</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="field" color="primary" appearance="outline">
+        <mat-label class="noto">Name</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input type="text" matInput placeholder="Placeholder">
+
+        <mat-hint style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">Enter your valid email</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="field" color="primary" appearance="outline">
+        <mat-label class="noto">Mobile</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input type="text" matInput placeholder="Placeholder">
+
+        <mat-hint style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">Enter your valid email</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="field" color="primary" appearance="outline">
+        <mat-label class="noto">Role</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input type="text" matInput placeholder="Placeholder">
+
+        <mat-hint style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">Enter your valid email</mat-hint>
+    </mat-form-field>
+
+    <button class="btn" mat-flat-button color="primary" (click)="close()">LOGIN</button>
+</div>

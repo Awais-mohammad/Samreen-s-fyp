@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <img class="logo" src="../../assets/logo.png" alt="">
+    </mat-toolbar>
+    <mat-nav-list class="items">
+      <h3 class="mukta">
+        UIIT Automation
+      </h3>
+
+      <div class="lists">
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          DASHBOARD
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>computer</mat-icon>
+          Final Year Project
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>person</mat-icon>
+          Student Queries
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>account_circle</mat-icon>
+          Profile
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          DASHBOARD
+        </p>
+
+
+      </div>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar" color="none">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>fyp</span>
+    </mat-toolbar>
+
+    <ng-content>
+
+    </ng-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
