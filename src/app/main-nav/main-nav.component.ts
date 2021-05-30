@@ -16,12 +16,28 @@ export class MainNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
-  width: number
+  constructor(private breakpointObserver: BreakpointObserver) {
+
+  }
+
+  typesOfShoes: string[] = ['Profile', 'Logout'];
+  width: number;
+  selectedOptions: string;
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.width = window.innerWidth;
   }
 
+  list: boolean = false;
+
+  showHideList() {
+    this.list = !this.list
+  }
+
+  onChange(change) {
+    console.log(change.option.value, change.option.selected);
+
+ }
 
 }

@@ -213,7 +213,10 @@ form > .button {
     -webkit-border-radius: 0 4px 4px 0;
     border-radius: 0 4px 4px 0;
 }
-
+.cardd {
+    position: relative;
+    top: 6em;
+}
 form > .button:hover {
     background-color: rgba(0, 150, 136, 0.8);
 }
@@ -223,6 +226,7 @@ form > .button:hover {
 }
 .df {
     display: flex;
+    width: 100%;
     justify-content: space-between;
 }
 

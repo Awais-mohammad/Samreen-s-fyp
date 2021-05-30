@@ -46,8 +46,30 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>fyp</span>
+      <span class="alignright">
+        <img class="avatar" src="../../assets/userava.png" alt="">
+
+      </span>
+      <div class="end">
+        <mat-icon *ngIf="!list" (click)="showHideList()" style="color: white;" matPrefix>
+          arrow_drop_down
+        </mat-icon>
+
+        <mat-icon *ngIf="list" (click)="showHideList()" style="color: white;" matPrefix>
+          keyboard_arrow_up
+        </mat-icon>
+
+      </div>
     </mat-toolbar>
+
+    <mat-selection-list id="areaListControl" name="areaListControl" (selectionChange)="onChange($event)" *ngIf="list"
+      class="list" [multiple]="false">
+      <mat-list-option [selected]="shoe.selected" [value]="shoe" *ngFor="let shoe of typesOfShoes" [value]="shoe">
+        {{shoe}}
+      </mat-list-option>
+    </mat-selection-list>
+
+
 
     <ng-content>
 
