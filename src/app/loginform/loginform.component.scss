@@ -31,9 +31,19 @@ h1 {
     font-family: "Mukta", sans-serif;
 }
 .closeicon {
-    position: relative;
-    left: 50%;
+    position: fixed;
+    left: 64%;
 }
 mat-icon:hover {
     cursor: pointer;
+}
+::ng-deep.snack-bar-color {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.103), 0 6px 6px rgba(0, 0, 0, 0.103);
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-family: fantasy;
+}
+.example-margin {
+    position: fixed;
+    top: 40%;
 }

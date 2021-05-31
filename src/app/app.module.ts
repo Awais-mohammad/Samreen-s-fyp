@@ -1,7 +1,14 @@
+import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
+/*
+Angular material imports
+*/
 
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +25,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { CreateuserformComponent } from './createuserform/createuserform.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
+/*
+firebase imports
+*/
+
+import { AngularFireModule } from '@angular/fire'
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
 
 @NgModule({
   declarations: [
@@ -26,8 +45,6 @@ import { CreateuserformComponent } from './createuserform/createuserform.compone
     LoginformComponent,
     MainNavComponent,
     CreateuserformComponent,
-
-
   ],
   entryComponents: [LoginformComponent, CreateuserformComponent],
 
@@ -42,10 +59,19 @@ import { CreateuserformComponent } from './createuserform/createuserform.compone
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     LayoutModule,
     MatToolbarModule,
     MatTableModule,
+    MatSnackBarModule,
+    FormsModule,
+    MatProgressSpinnerModule,
     MatSidenavModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    ReactiveFormsModule,
+    MatSelectModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -132,39 +132,46 @@
 
             <table>
                 <tr>
+
+
                     <th class="tablehead">
-                        Firstname
+                        NAME
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        EMAIL
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Phone
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Created At
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Year
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Operation
                     </th>
+
 
 
                 </tr>
-                <tr *ngFor="let item of [].constructor(20)">
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
+                <tr *ngFor="let item of admins">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.timestamp}}</td>
+                    <td>{{item.year}}</td>
+                    <td style="text-align: center;">
+                        <button color="warn" (click)="manage('Dashboard')" mat-mini-fab>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
 
                 </tr>
 
@@ -208,39 +215,46 @@
 
             <table>
                 <tr>
+
+
                     <th class="tablehead">
-                        Firstname
+                        NAME
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        EMAIL
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Phone
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Created At
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Year
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Operation
                     </th>
+
 
 
                 </tr>
-                <tr *ngFor="let item of [].constructor(20)">
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
+                <tr *ngFor="let item of cordinators">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.timestamp}}</td>
+                    <td>{{item.year}}</td>
+                    <td style="text-align: center;">
+                        <button color="warn" (click)="manage('Dashboard')" mat-mini-fab>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
 
                 </tr>
 
@@ -260,7 +274,7 @@
                     {{currentDiv}} Details
                 </h1>
 
-                <button (click)="manage('Dashboard')" mat-mini-fab>
+                <button (click)="manage('Staff')" mat-mini-fab>
                     <mat-icon>home</mat-icon>
                 </button>
 
@@ -270,7 +284,7 @@
 
             <div class="pt10">
 
-                <button (click)="openDialog('Staff')" color="accent" mat-flat-button>
+                <button (click)="openDialog('Admin')" color="accent" mat-flat-button>
                     <mat-icon>add_circle</mat-icon>
                     ADD NEW
                 </button>
@@ -284,39 +298,46 @@
 
             <table>
                 <tr>
+
+
                     <th class="tablehead">
-                        Firstname
+                        NAME
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        EMAIL
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Phone
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Created At
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Year
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Operation
                     </th>
+
 
 
                 </tr>
-                <tr *ngFor="let item of [].constructor(20)">
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
+                <tr *ngFor="let item of staffs">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.timestamp}}</td>
+                    <td>{{item.year}}</td>
+                    <td style="text-align: center;">
+                        <button color="warn" (click)="manage('Dashboard')" mat-mini-fab>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
 
                 </tr>
 
@@ -360,39 +381,46 @@
 
             <table>
                 <tr>
+
+
                     <th class="tablehead">
-                        Firstname
+                        NAME
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        EMAIL
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Phone
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Created At
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Year
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Operation
                     </th>
+
 
 
                 </tr>
-                <tr *ngFor="let item of [].constructor(20)">
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
+                <tr *ngFor="let item of supervisors">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.timestamp}}</td>
+                    <td>{{item.year}}</td>
+                    <td style="text-align: center;">
+                        <button color="warn" (click)="manage('Dashboard')" mat-mini-fab>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
 
                 </tr>
 
@@ -436,39 +464,46 @@
 
             <table>
                 <tr>
+
+
                     <th class="tablehead">
-                        Firstname
+                        NAME
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        EMAIL
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Phone
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Created At
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Year
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Operation
                     </th>
+
 
 
                 </tr>
-                <tr *ngFor="let item of [].constructor(20)">
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
+                <tr *ngFor="let item of evaluators">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.timestamp}}</td>
+                    <td>{{item.year}}</td>
+                    <td style="text-align: center;">
+                        <button color="warn" (click)="manage('Dashboard')" mat-mini-fab>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
 
                 </tr>
 
@@ -512,39 +547,56 @@
 
             <table>
                 <tr>
+
+
                     <th class="tablehead">
-                        Firstname
+                        NAME
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        EMAIL
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Phone
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Created At
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Registration No
                     </th>
 
                     <th class="tablehead">
-                        Firstname
+                        Shift
                     </th>
+
+                    <th class="tablehead">
+                        Year
+                    </th>
+
+                    <th class="tablehead">
+                        Operation
+                    </th>
+
 
 
                 </tr>
-                <tr *ngFor="let item of [].constructor(20)">
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
+                <tr *ngFor="let item of students">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.timestamp}}</td>
+                    <td>{{item.regNo}}</td>
+                    <td>{{item.shift}}</td>
+                    <td>{{item.year}}</td>
+                    <td style="text-align: center;">
+                        <button color="warn" (click)="manage('Dashboard')" mat-mini-fab>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
 
                 </tr>
 

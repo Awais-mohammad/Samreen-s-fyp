@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
@@ -16,7 +18,12 @@ export class MainNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private auth: AngularFireAuth,
+    private router: Router,
+
+  ) {
 
   }
 
@@ -37,7 +44,17 @@ export class MainNavComponent {
 
   onChange(change) {
     console.log(change.option.value, change.option.selected);
+    if (change.option.value == 'Logout') {
+      this.logout()
+    }
+  }
 
- }
+  logout() {
+    this.auth.signOut().then(() => {
+      this.router.navigate(['authentication'])
+    }).catch(e => {
+
+    })
+  }
 
 }
