@@ -62,13 +62,15 @@ export class MainNavComponent {
 
   userTyp() {
     const authSub = this.auth.authState.subscribe(user => {
-      this.firestore.collection('users').doc(user.uid).valueChanges().subscribe((data: any) => {
-        if (data != undefined) {
-          this.user = data.userTyp
-          console.log('user type is', this.user);
+      if (user && user.uid) {
+        this.firestore.collection('users').doc(user.uid).valueChanges().subscribe((data: any) => {
+          if (data != undefined) {
+            this.user = data.userTyp
+            console.log('user type is', this.user);
 
-        }
-      })
+          }
+        })
+      }
     })
   }
 

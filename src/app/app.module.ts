@@ -36,7 +36,6 @@ import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
-import { StudentsNavComponent } from './students-nav/students-nav.component';
 
 
 
@@ -47,7 +46,7 @@ import { StudentsNavComponent } from './students-nav/students-nav.component';
     LoginformComponent,
     MainNavComponent,
     CreateuserformComponent,
-    StudentsNavComponent,
+  
   ],
   entryComponents: [LoginformComponent, CreateuserformComponent],
 

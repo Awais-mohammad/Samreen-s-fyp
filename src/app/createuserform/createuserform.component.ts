@@ -126,11 +126,11 @@ export class CreateuserformComponent implements OnInit {
               }).then(() => {
                 this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
 
-                this.auth.signOut().then(() => {
-                  this.auth.signInWithEmailAndPassword(this.useremail, this.userpassword).then(() => {
-                    this.refreshPage()
-                  })
-                })
+                // this.auth.signOut().then(() => {
+                //   this.auth.signInWithEmailAndPassword(this.useremail, this.userpassword).then(() => {
+                //     this.refreshPage()
+                //   })
+                // })
 
               }).catch((err) => {
                 this.openSnackBar('error' + err.message, 3000)
