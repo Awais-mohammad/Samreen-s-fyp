@@ -35,8 +35,6 @@ firebase imports
 import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
-
 
 
 @NgModule({
@@ -46,6 +44,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
     LoginformComponent,
     MainNavComponent,
     CreateuserformComponent,
+  
   
   ],
   entryComponents: [LoginformComponent, CreateuserformComponent],

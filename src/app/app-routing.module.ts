@@ -1,3 +1,7 @@
+import { SupervisorDashboardComponent } from './supervisor-dashboard/supervisor-dashboard.component';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import { EvaluatorDashboardComponent } from './evaluator-dashboard/evaluator-dashboard.component';
+import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -22,7 +26,27 @@ const routes: Routes = [
   {
     path: "student-dashboard",
     component: StudentDashboardComponent,
+  },
+  {
+    path: "staff-dashboard",
+    component: StaffDashboardComponent,
+  },
+  {
+    path: "evaluator-dashboard",
+    component: EvaluatorDashboardComponent,
+  },
+  {
+    path: "teacher-dashboard",
+    component: TeacherDashboardComponent,
+  },
+  {
+    path: "supervisor-dashboard",
+    component: SupervisorDashboardComponent,
   }
+
+
+
+
 
 ];
 
@@ -36,4 +60,6 @@ export const routingComponents = [
   AuthenticationComponent,
   AdminDashboardComponent,
   StudentDashboardComponent,
+  TeacherDashboardComponent, SupervisorDashboardComponent,
+  StaffDashboardComponent, EvaluatorDashboardComponent,
 ]
