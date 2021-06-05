@@ -6,12 +6,13 @@ import { map, shareReplay } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-main-nav',
-  templateUrl: './main-nav.component.html',
-  styleUrls: ['./main-nav.component.scss']
+  selector: 'app-students-nav',
+  templateUrl: './students-nav.component.html',
+  styleUrls: ['./students-nav.component.scss']
 })
-export class MainNavComponent {
+export class StudentsNavComponent {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

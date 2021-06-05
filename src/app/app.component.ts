@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +11,9 @@ export class AppComponent {
 
   constructor(
     private router: Router,
+    private auth: AngularFireAuth,
   ) {
-
+    
   }
   route() {
     this.router.navigate(['authentication'])

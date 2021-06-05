@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-createuserform',
@@ -18,6 +20,8 @@ export class CreateuserformComponent implements OnInit {
       private firestore: AngularFirestore,
       private auth: AngularFireAuth,
       public snackBar: MatSnackBar,
+      private router: Router,
+      @Inject(DOCUMENT) private _document: Document,
 
   ) {
     console.log(new Date().getFullYear());
@@ -94,60 +98,88 @@ export class CreateuserformComponent implements OnInit {
 
   createUser() {
 
-    if (this.data.user == 'Student') {
-      const name = this.name;
-      const email = this.email;
-      const password = this.password;
-      const phone = this.phone;
-      const userTyp = this.role;
-      const timestamp = this.createdAt
-      const year = new Date().getFullYear()
-      const regNo = this.regNo
-      const shift = this.choosedShit;
+    const auth = this.auth.authState.subscribe(user => {
+      if (user && user.uid) {
+        this.firestore.collection('users').doc(user.uid).get().subscribe((data: any) => {
+          this.currentUserData = data
+     
+          this.useremail = data._delegate._document.data.value.mapValue.fields.email.stringValue;
+          this.userpassword = data._delegate._document.data.value.mapValue.fields.password.stringValue
 
-      this.auth.createUserWithEmailAndPassword(this.email, this.password).then((user) => {
-        console.log(user.user.uid);
-        const userID = user.user.uid
-        this.firestore.collection('users').doc(user.user.uid).set({
-          name, email, password, phone, userTyp, timestamp, year, regNo, shift, userID
-        }).then(() => {
-          this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
-        }).catch((err) => {
-          this.openSnackBar('error' + err.message, 3000)
-          this.showspin()
+     
+          if (this.data.user == 'Student') {
+            const name = this.name;
+            const email = this.email;
+            const password = this.password;
+            const phone = this.phone;
+            const userTyp = this.role;
+            const timestamp = this.createdAt
+            const year = new Date().getFullYear()
+            const regNo = this.regNo
+            const shift = this.choosedShit;
+
+            this.auth.createUserWithEmailAndPassword(this.email, this.password).then((user) => {
+              console.log(user.user.uid);
+              const userID = user.user.uid
+              this.firestore.collection('users').doc(user.user.uid).set({
+                name, email, password, phone, userTyp, timestamp, year, regNo, shift, userID
+              }).then(() => {
+                this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
+
+                this.auth.signOut().then(() => {
+                  this.auth.signInWithEmailAndPassword(this.useremail, this.userpassword).then(() => {
+                    this.refreshPage()
+                  })
+                })
+
+              }).catch((err) => {
+                this.openSnackBar('error' + err.message, 3000)
+                this.showspin()
+              })
+            }).catch((err) => {
+              this.openSnackBar('error' + err.message, 3000)
+              this.showspin()
+            })
+
+          }
+          else {
+            const name = this.name;
+            const email = this.email;
+            const password = this.password;
+            const phone = this.phone;
+            const userTyp = this.role;
+            const timestamp = this.createdAt
+            const year = new Date().getFullYear()
+            this.auth.createUserWithEmailAndPassword(this.email, this.password).then((user) => {
+              console.log(user.user.uid);
+              const userID = user.user.uid
+
+              this.firestore.collection('users').doc(user.user.uid).set({
+                name, email, password, phone, userTyp, timestamp, year, userID
+              }).then(() => {
+
+                this.auth.signOut().then(() => {
+                  this.auth.signInWithEmailAndPassword(this.useremail, this.userpassword).then(() => {
+                    this.refreshPage()
+                  })
+                })
+                this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
+
+              }).catch((err) => {
+                this.openSnackBar('error' + err.message, 3000)
+                this.showspin()
+              })
+            }).catch((err) => {
+              this.openSnackBar('error' + err.message, 3000)
+              this.showspin()
+            })
+          }
+
         })
-      }).catch((err) => {
-        this.openSnackBar('error' + err.message, 3000)
-        this.showspin()
-      })
+      }
+    })
 
-    }
-    else {
-      const name = this.name;
-      const email = this.email;
-      const password = this.password;
-      const phone = this.phone;
-      const userTyp = this.role;
-      const timestamp = this.createdAt
-      const year = new Date().getFullYear()
 
-      this.auth.createUserWithEmailAndPassword(this.email, this.password).then((user) => {
-        console.log(user.user.uid);
-        const userID = user.user.uid
-
-        this.firestore.collection('users').doc(user.user.uid).set({
-          name, email, password, phone, userTyp, timestamp, year, userID
-        }).then(() => {
-          this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
-        }).catch((err) => {
-          this.openSnackBar('error' + err.message, 3000)
-          this.showspin()
-        })
-      }).catch((err) => {
-        this.openSnackBar('error' + err.message, 3000)
-        this.showspin()
-      })
-    }
 
 
   }
@@ -171,8 +203,22 @@ export class CreateuserformComponent implements OnInit {
   }
 
 
+  currentUserData: any;
 
+  getCurrentUser() {
+
+  }
+
+  refreshPage() {
+    this._document.defaultView.location.reload();
+  }
+  useremail: string;
+  userpassword: string;
   ngOnInit(): void {
+
+
+
+
   }
 
 }

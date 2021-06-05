@@ -1,0 +1,60 @@
+<app-students-nav>
+
+    <div class="main">
+        <mat-card class="card">
+
+            <h1 class="center">Group Formation</h1>
+
+
+           
+
+            <div style="padding-top: 1em;">
+                <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                    SAMPLE TEMPLATE
+                </h4>
+                   <a href="https://exportportal.site/vendors/2.jpg">
+                   <button mat-fab color="warn">
+                    <mat-icon>download</mat-icon>
+                </button>
+            </a>
+               
+            </div>
+
+            <div class="flex">
+                <mat-form-field  class="field select" color="primary" appearance="outline">
+
+                    <mat-label>Choose evaluator</mat-label>
+                    <mat-icon matPrefix>person</mat-icon>
+                    <mat-select matNativeControl [(ngModel)]="evaluator">
+                        <mat-option *ngFor="let item of evaluators" [value]="item">{{item}}</mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="error=='shift'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">
+                        {{errormsg}}
+                    </mat-hint>
+
+                </mat-form-field>
+
+                <div style="width: 35em;">
+
+                </div>
+
+                <mat-form-field class="field select" color="primary" appearance="outline">
+
+                    <mat-label>Choose memebers</mat-label>
+                    <mat-icon matPrefix>person</mat-icon>
+                    <mat-select matNativeControl [(ngModel)]="evaluator">
+                        <mat-option *ngFor="let item of evaluators" [value]="item">{{item}}</mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="error=='shift'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">
+                        {{errormsg}}
+                    </mat-hint>
+
+                </mat-form-field>
+
+            </div>
+
+    </mat-card>
+
+    </div>
+
+</app-students-nav>

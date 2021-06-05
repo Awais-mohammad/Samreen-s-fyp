@@ -65,11 +65,12 @@ export class LoginformComponent implements OnInit {
 
         if (c_user.userTyp == this.data.user) {
           if (c_user.userTyp == 'Student') {
-            alert('its a fukin student')
+
+            this.gotoPage('student-dashboard')
 
           }
           else if (c_user.userTyp == 'Admin') {
-         
+
             this.gotoPage('admin-dashboard')
           }
           else if (c_user.userTyp == 'Supervisor') {
@@ -114,7 +115,7 @@ export class LoginformComponent implements OnInit {
   }
 
   gotoPage(pagename) {
-    this.router.navigate([pagename]).then(()=>{
+    this.router.navigate([pagename]).then(() => {
       this.close()
     })
   }

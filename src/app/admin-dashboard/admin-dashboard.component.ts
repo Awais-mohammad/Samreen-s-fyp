@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CreateuserformComponent } from './../createuserform/createuserform.component';
 import { LoginformComponent } from './../loginform/loginform.component';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
@@ -20,7 +21,7 @@ export class AdminDashboardComponent implements OnInit {
     private dialog: MatDialog,
     private auth: AngularFireAuth,
     private firestore: AngularFirestore,
-
+    public snackBar: MatSnackBar,
   ) {
 
     this.currentDiv = 'Dashboard'
@@ -44,6 +45,8 @@ export class AdminDashboardComponent implements OnInit {
     };
     this.dialog.open(CreateuserformComponent, dialogConfig);
   }
+
+
   currentDiv: string;
   admins: any;
   students: any;
@@ -77,6 +80,19 @@ export class AdminDashboardComponent implements OnInit {
 
 
   }
+
+  openSnackBar(message, duration: number) {
+
+    this.snackBar.open(message, '', {
+      duration: duration,
+      verticalPosition: 'top', // 'top' | 'bottom'
+      horizontalPosition: 'end', //'start' | 'center' | 'end' | 'left' | 'right'
+      panelClass: ['snack-bar-color'],
+    });
+
+  }
+
+
   staff() {
     this.firestore.collection('users', q => q.where('userTyp', '==', 'Staff')).valueChanges().subscribe((staff: any) => {
       console.log('staff are=>', staff);
@@ -115,9 +131,19 @@ export class AdminDashboardComponent implements OnInit {
 
   cordinator() {
     this.firestore.collection('users', q => q.where('userTyp', '==', 'Co-ordinator')).valueChanges().subscribe((cordinator: any) => {
-    
+
       this.cordinators = cordinator
       console.log('ordinator are=>', this.cordinators);
+    })
+  }
+
+  deleteuser(id: string) {
+    console.log(id);
+
+    this.firestore.collection('users').doc(id).delete().then(() => {
+      this.openSnackBar('User deleted successfully', 1500)
+    }).catch(err => {
+      this.openSnackBar(err.message, 1500)
     })
   }
 

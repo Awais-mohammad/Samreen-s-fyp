@@ -1,3 +1,4 @@
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -17,7 +18,12 @@ const routes: Routes = [
     path: "",
     redirectTo: "authentication",
     pathMatch: "full"
+  },
+  {
+    path: "student-dashboard",
+    component: StudentDashboardComponent,
   }
+
 ];
 
 @NgModule({
@@ -29,4 +35,5 @@ export class AppRoutingModule { }
 export const routingComponents = [
   AuthenticationComponent,
   AdminDashboardComponent,
+  StudentDashboardComponent,
 ]
