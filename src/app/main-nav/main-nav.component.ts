@@ -49,7 +49,7 @@ export class MainNavComponent {
       this.logout()
     }
   }
-
+//;legp
   logout() {
     this.auth.signOut().then(() => {
       this.router.navigate(['authentication'])
