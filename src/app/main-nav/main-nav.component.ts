@@ -51,7 +51,7 @@ export class MainNavComponent {
   }
 //;legp
   logout() {
-    this.auth.signOut().then(() => {
+    this.auth.auth.signOut().then(() => {
       this.router.navigate(['authentication'])
     }).catch(e => {
 

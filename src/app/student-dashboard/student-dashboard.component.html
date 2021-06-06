@@ -1,32 +1,46 @@
+<app-main-nav>
 
 
     <div class="main">
-        <mat-card class="card">
+        <mat-card *ngIf="!groupformation" class="card">
 
             <h1 class="center">Group Formation</h1>
 
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Enter your project idea in detail
+            </p>
+            <mat-form-field class="fieldone" color="primary" appearance="outline">
+                <mat-label style="font-family: Verdana, Geneva, Tahoma, sans-serif;;" class="noto">Provide the complete project idea dear</mat-label>
+                <mat-icon matPrefix>lightbulb</mat-icon>
+                <input [(ngModel)]="idea" type="text" matInput placeholder="What is your proj idea?">
 
-           
+            </mat-form-field>
+
+
 
             <div style="padding-top: 1em;">
                 <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
                     SAMPLE TEMPLATE
                 </h4>
-                   <a href="https://exportportal.site/vendors/2.jpg">
-                   <button mat-fab color="warn">
-                    <mat-icon>download</mat-icon>
-                </button>
-            </a>
-               
+                <a href="https://exportportal.site/vendors/2.jpg" target="_blank">
+                    <button mat-fab color="warn">
+                        <mat-icon>download</mat-icon>
+                    </button>
+                </a>
+
             </div>
 
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;padding-top: 20px;">
+                Choose members and supervisor
+            </p>
+
             <div class="flex">
-                <mat-form-field  class="field select" color="primary" appearance="outline">
+                <mat-form-field *ngIf="evaluators" class="field select" color="primary" appearance="outline">
 
                     <mat-label>Choose evaluator</mat-label>
                     <mat-icon matPrefix>person</mat-icon>
-                    <mat-select matNativeControl [(ngModel)]="evaluator">
-                        <mat-option *ngFor="let item of evaluators" [value]="item">{{item}}</mat-option>
+                    <mat-select matNativeControl (selectionChange)="evalchoosed($event.value)">
+                        <mat-option *ngFor="let item of evaluators" [value]="item">{{item.name}}</mat-option>
                     </mat-select>
                     <mat-hint *ngIf="error=='shift'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">
                         {{errormsg}}
@@ -38,21 +52,49 @@
 
                 </div>
 
-                <mat-form-field class="field select" color="primary" appearance="outline">
+                <div style="display: flex;flex-direction: column;">
+                    <mat-form-field *ngIf="students" class="field select" color="primary" appearance="outline">
 
-                    <mat-label>Choose memebers</mat-label>
-                    <mat-icon matPrefix>person</mat-icon>
-                    <mat-select matNativeControl [(ngModel)]="evaluator">
-                        <mat-option *ngFor="let item of evaluators" [value]="item">{{item}}</mat-option>
-                    </mat-select>
-                    <mat-hint *ngIf="error=='shift'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">
-                        {{errormsg}}
-                    </mat-hint>
+                        <mat-label>Choose memebers</mat-label>
+                        <mat-icon matPrefix>person</mat-icon>
+                        <mat-select (selectionChange)="studentchossed($event.value)" matNativeControl>
+                            <mat-option *ngFor="let item of students" [value]="item">{{item.name}}</mat-option>
+                        </mat-select>
+                        <mat-hint *ngIf="error=='shift'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">
+                            {{errormsg}}
+                        </mat-hint>
 
-                </mat-form-field>
+
+                    </mat-form-field>
+                    <mat-chip-list *ngIf="choosedpartners" #chipList aria-label="Fruit selection">
+                        <mat-chip color="primary" *ngFor="let fruit of choosedpartners let i=index" [removable]="true"
+                            (removed)="remove(i)">
+                            {{fruit.name}}
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                    </mat-chip-list>
+                </div>
 
             </div>
 
-    </mat-card>
+
+            <div style="text-align: right;">
+                <button (click)="addfyp()" mat-raised-button color="warn">SAVE</button>
+            </div>
+
+        </mat-card>
+
+
+        <div *ngIf="groupformation" class="cell">
+            <div class="loader5"></div>
+            <div>
+                <h2
+                    style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;position: relative;left: -10px;">
+                    form submitted
+                </h2>
+            </div>
+        </div>
 
     </div>
+
+</app-main-nav>

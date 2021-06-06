@@ -58,7 +58,7 @@ export class LoginformComponent implements OnInit {
 
 
   login() {
-    this.auth.signInWithEmailAndPassword(this.email, this.password).then(user => {
+    this.auth.auth.signInWithEmailAndPassword(this.email, this.password).then(user => {
       this.firestore.collection('users').doc(user.user.uid).valueChanges().subscribe((c_user: any) => {
 
         console.log(c_user);
@@ -86,12 +86,12 @@ export class LoginformComponent implements OnInit {
             alert('its a fukin Evaluator')
           }
           else {
-            this.auth.signOut()
+            this.auth.auth.signOut()
             this.openSnackBar('Ahh no user found!!', 3000)
           }
         }
         else {
-          this.auth.signOut()
+          this.auth.auth.signOut()
           this.openSnackBar('Please donnot try to login into other"s system its very bad dear!!!', 3000)
         }
 

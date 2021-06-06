@@ -4,10 +4,11 @@ import { LoginformComponent } from './../loginform/loginform.component';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
+
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.scss']
@@ -80,6 +81,7 @@ export class AdminDashboardComponent implements OnInit {
 
 
   }
+
 
   openSnackBar(message, duration: number) {
 

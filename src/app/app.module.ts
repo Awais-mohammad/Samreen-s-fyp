@@ -5,7 +5,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatChipsModule} from '@angular/material/chips';
 /*
 Angular material imports
 */
@@ -44,8 +44,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     LoginformComponent,
     MainNavComponent,
     CreateuserformComponent,
-  
-  
+
+
   ],
   entryComponents: [LoginformComponent, CreateuserformComponent],
 
@@ -69,10 +69,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     FormsModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
     MatSelectModule,
-
+    MatChipsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

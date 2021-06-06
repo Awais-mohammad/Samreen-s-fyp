@@ -5,6 +5,7 @@ import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from "@angular/material/d
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
+import * as firebase from 'firebase/app'
 
 @Component({
   selector: 'app-createuserform',
@@ -40,6 +41,8 @@ export class CreateuserformComponent implements OnInit {
   shifts: string[] = ['Morning', 'Evening']
   regNo: string;
   choosedShit: string;
+  batches: string[] = ['183', '201', '333']
+  choosedbatch: string;
 
   showspin() {
     this.spin = !this.spin
@@ -89,6 +92,11 @@ export class CreateuserformComponent implements OnInit {
 
       this.showspin()
     }
+    else if (!this.choosedbatch && this.data.user == 'Student') {
+      this.error = 'batch'
+      this.errormsg = 'choose a batch'
+      this.showspin()
+    }
     else {
 
 
@@ -98,91 +106,116 @@ export class CreateuserformComponent implements OnInit {
 
   createUser() {
 
-    const auth = this.auth.authState.subscribe(user => {
-      if (user && user.uid) {
-        this.firestore.collection('users').doc(user.uid).get().subscribe((data: any) => {
-          this.currentUserData = data
-     
-          this.useremail = data._delegate._document.data.value.mapValue.fields.email.stringValue;
-          this.userpassword = data._delegate._document.data.value.mapValue.fields.password.stringValue
+    console.log('in here');
+    
+    if (this.data.user == 'Student') {
+      const name = this.name;
+      const email = this.email;
+      const password = this.password;
+      const phone = this.phone;
+      const userTyp = this.role;
+      const timestamp = this.createdAt
+      const year = new Date().getFullYear()
+      const regNo = this.regNo
+      const shift = this.choosedShit;
+      const batch = this.choosedbatch
+      var config = {
+        apiKey: "AIzaSyDnwsMEwSY3DZ7ja5RB200xN1lTvjpFyI4",
+        authDomain: "moveme-23586.firebaseapp.com",
+        databaseURL: "https://moveme-23586.firebaseio.com",
+        projectId: "moveme-23586",
+        storageBucket: "moveme-23586.appspot.com",
+        messagingSenderId: "851612163631",
+        appId: "1:851612163631:web:bda512c8099717030ff0da",
+        measurementId: "G-J7PGETBY2V"
+      };
 
-     
-          if (this.data.user == 'Student') {
-            const name = this.name;
-            const email = this.email;
-            const password = this.password;
-            const phone = this.phone;
-            const userTyp = this.role;
-            const timestamp = this.createdAt
-            const year = new Date().getFullYear()
-            const regNo = this.regNo
-            const shift = this.choosedShit;
+      var secondApp = firebase.initializeApp(config, "secondary")
+      secondApp.auth().createUserWithEmailAndPassword(this.email, this.password).then((user) => {
+        console.log();
+        console.log(user.user.uid);
+        const userID = user.user.uid
+        this.firestore.collection('users').doc(user.user.uid).set({
+          name, email, password, phone, userTyp, timestamp, year, regNo, shift, userID, batch
+        }).then(() => {
+          this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
 
-            this.auth.createUserWithEmailAndPassword(this.email, this.password).then((user) => {
-              console.log(user.user.uid);
-              const userID = user.user.uid
-              this.firestore.collection('users').doc(user.user.uid).set({
-                name, email, password, phone, userTyp, timestamp, year, regNo, shift, userID
-              }).then(() => {
-                this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
 
-                // this.auth.signOut().then(() => {
-                //   this.auth.signInWithEmailAndPassword(this.useremail, this.userpassword).then(() => {
-                //     this.refreshPage()
-                //   })
-                // })
 
-              }).catch((err) => {
-                this.openSnackBar('error' + err.message, 3000)
-                this.showspin()
-              })
-            }).catch((err) => {
-              this.openSnackBar('error' + err.message, 3000)
-              this.showspin()
-            })
-
-          }
-          else {
-            const name = this.name;
-            const email = this.email;
-            const password = this.password;
-            const phone = this.phone;
-            const userTyp = this.role;
-            const timestamp = this.createdAt
-            const year = new Date().getFullYear()
-            this.auth.createUserWithEmailAndPassword(this.email, this.password).then((user) => {
-              console.log(user.user.uid);
-              const userID = user.user.uid
-
-              this.firestore.collection('users').doc(user.user.uid).set({
-                name, email, password, phone, userTyp, timestamp, year, userID
-              }).then(() => {
-
-                this.auth.signOut().then(() => {
-                  this.auth.signInWithEmailAndPassword(this.useremail, this.userpassword).then(() => {
-                    this.refreshPage()
-                  })
-                })
-                this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
-
-              }).catch((err) => {
-                this.openSnackBar('error' + err.message, 3000)
-                this.showspin()
-              })
-            }).catch((err) => {
-              this.openSnackBar('error' + err.message, 3000)
-              this.showspin()
-            })
-          }
-
+        }).catch((err) => {
+          this.openSnackBar('error' + err.message, 3000)
+          this.showspin()
         })
-      }
-    })
+      }).then(() => {
+        console.log('new user logged out');
+
+        secondApp.auth().signOut()
+      }).then(() => {
+        secondApp.delete()
+
+        console.log('session fucked off');
+      })
+
+    }
+    else {
+      console.log('tadak bro tadak');
+
+      const name = this.name;
+      const email = this.email;
+      const password = this.password;
+      const phone = this.phone;
+      const userTyp = this.role;
+      const timestamp = this.createdAt
+      const year = new Date().getFullYear()
+
+      var config = {
+        apiKey: "AIzaSyDnwsMEwSY3DZ7ja5RB200xN1lTvjpFyI4",
+        authDomain: "moveme-23586.firebaseapp.com",
+        databaseURL: "https://moveme-23586.firebaseio.com",
+        projectId: "moveme-23586",
+        storageBucket: "moveme-23586.appspot.com",
+        messagingSenderId: "851612163631",
+        appId: "1:851612163631:web:bda512c8099717030ff0da",
+        measurementId: "G-J7PGETBY2V"
+      };
+
+      var secondApp = firebase.initializeApp(config, "secondary")
+      secondApp.auth().createUserWithEmailAndPassword(this.email, this.password).then((user) => {
+        console.log();
+        console.log(user.user.uid);
+        const userID = user.user.uid
+
+        this.firestore.collection('users').doc(user.user.uid).set({
+          name, email, password, phone, userTyp, timestamp, year, userID
+        }).then(() => {
+
+          this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
+          this.showspin()
+        }).catch((err) => {
+          this.openSnackBar('error' + err.message, 3000)
+          this.showspin()
+        })
+      }).then(() => {
+        console.log('new user logged out');
+
+        secondApp.auth().signOut()
+      }).then(() => {
+        secondApp.delete()
+
+        console.log('session fucked off');
+      })
+
+
+    }
+
 
 
 
 
   }
+
+
+
 
   openSnackBar(message, duration: number) {
 
