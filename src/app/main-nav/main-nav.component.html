@@ -9,23 +9,7 @@
         UIIT Automation
       </h3>
 
-      <div *ngIf="user && user=='Student'" class="lists">
-        <p mat-list-item>
-          <mat-icon class="i" matPrefix>dashboard</mat-icon>
-          Group Formation
-        </p>
-
-        <p mat-list-item>
-          <mat-icon class="i" matPrefix>dashboard</mat-icon>
-          Group Formation
-        </p>
-
-        <p mat-list-item>
-          <mat-icon class="i" matPrefix>person</mat-icon>
-          Student Queries
-        </p>
-
-      </div>
+      
 
       <div *ngIf="user && user=='Admin'" class="lists">
         <p mat-list-item>
@@ -39,7 +23,7 @@
         </p>
 
         <p mat-list-item>
-          <mat-icon class="i" matPrefix>person</mat-icon>
+          <mat-icon class="i" matPrefix>contact_support</mat-icon>
           Student Queries
         </p>
 
@@ -48,11 +32,77 @@
           Profile
         </p>
 
+      </div>
+
+      <div *ngIf="user && user=='Coordinator'" class="lists">
         <p mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
-          DASHBOARD
+          Final Year Project
         </p>
 
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Supervisor
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>person</mat-icon>
+          Evaluator
+        </p>
+
+      </div>
+
+
+      <div *ngIf="user && user=='Supervisor'" class="lists">
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Supervision Groups
+        </p>
+
+      </div>
+
+      <div *ngIf="user && user=='Evaluator'" class="lists">
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Evaluation Groups
+        </p>
+
+
+      </div>
+
+      <div *ngIf="user && user=='Staff'" class="lists">
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Application
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Certificate
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>person</mat-icon>
+          Letters
+        </p>
+
+      </div>
+
+      <div *ngIf="user && user=='Student'" class="lists">
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>computer</mat-icon>
+          Final Year Project
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Group Formation
+        </p>
+
+        <p mat-list-item>
+          <mat-icon class="i" matPrefix>contact_support</mat-icon>
+          Student Queries
+        </p>
 
       </div>
 

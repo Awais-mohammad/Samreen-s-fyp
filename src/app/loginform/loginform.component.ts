@@ -74,25 +74,25 @@ export class LoginformComponent implements OnInit {
             this.gotoPage('admin-dashboard')
           }
           else if (c_user.userTyp == 'Supervisor') {
-            alert('its a fukin Supervisor')
+            alert(' Not Register or Invalid credentials')
           }
           else if (c_user.userTyp == 'Co-ordinator') {
-            alert('its a fukin ordinator')
+            alert('Not Register or Invalid credentials')
           }
           else if (c_user.userTyp == 'Staff') {
-            alert('its a fukin Staff')
+            alert('Not Register or Invalid credentials')
           }
           else if (c_user.userTyp == 'Evaluator') {
-            alert('its a fukin Evaluator')
+            alert('Not Register or Invalid credentials')
           }
           else {
             this.auth.auth.signOut()
-            this.openSnackBar('Ahh no user found!!', 3000)
+            this.openSnackBar('No user found!!', 3000)
           }
         }
         else {
           this.auth.auth.signOut()
-          this.openSnackBar('Please donnot try to login into other"s system its very bad dear!!!', 3000)
+          this.openSnackBar('Please donnot try to login into other"s system!', 3000)
         }
 
       })

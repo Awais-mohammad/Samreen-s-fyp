@@ -6,38 +6,21 @@
 
             <h1 class="center">Group Formation</h1>
 
-            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
-                Enter your project idea in detail
-            </p>
-            <mat-form-field class="fieldone" color="primary" appearance="outline">
-                <mat-label style="font-family: Verdana, Geneva, Tahoma, sans-serif;;" class="noto">Provide the complete project idea dear</mat-label>
-                <mat-icon matPrefix>lightbulb</mat-icon>
-                <input [(ngModel)]="idea" type="text" matInput placeholder="What is your proj idea?">
-
-            </mat-form-field>
+            
 
 
 
-            <div style="padding-top: 1em;">
-                <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
-                    SAMPLE TEMPLATE
-                </h4>
-                <a href="https://exportportal.site/vendors/2.jpg" target="_blank">
-                    <button mat-fab color="warn">
-                        <mat-icon>download</mat-icon>
-                    </button>
-                </a>
-
-            </div>
+           
 
             <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;padding-top: 20px;">
                 Choose members and supervisor
             </p>
 
             <div class="flex">
+                
                 <mat-form-field *ngIf="evaluators" class="field select" color="primary" appearance="outline">
 
-                    <mat-label>Choose evaluator</mat-label>
+                    <mat-label>Choose Supervisor</mat-label>
                     <mat-icon matPrefix>person</mat-icon>
                     <mat-select matNativeControl (selectionChange)="evalchoosed($event.value)">
                         <mat-option *ngFor="let item of evaluators" [value]="item">{{item.name}}</mat-option>
@@ -48,7 +31,7 @@
 
                 </mat-form-field>
 
-                <div style="width: 35em;">
+                <div style="width: 10em;">
 
                 </div>
 
@@ -77,12 +60,40 @@
 
             </div>
 
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                Enter your project idea in detail
+            </p>
+            <mat-form-field class="fieldone" color="primary" appearance="outline">
+                <mat-label style="font-family: Verdana, Geneva, Tahoma, sans-serif;;" class="noto">Provide the complete project idea dear</mat-label>
+                <mat-icon matPrefix>lightbulb</mat-icon>
+                <input [(ngModel)]="idea" type="text" matInput placeholder="What is your proj idea?">
+
+            </mat-form-field>
+
+            <div style="padding-top: 1em;">
+                <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                    SAMPLE TEMPLATE
+                </h4>
+                <a href="https://exportportal.site/vendors/2.jpg" target="_blank">
+                    <button mat-fab color="warn">
+                        <mat-icon>download</mat-icon>
+                    </button>
+                </a>
+    
+            </div>
+
 
             <div style="text-align: right;">
                 <button (click)="addfyp()" mat-raised-button color="warn">SAVE</button>
             </div>
 
+
+
+            
+
         </mat-card>
+
+    
 
 
         <div *ngIf="groupformation" class="cell">

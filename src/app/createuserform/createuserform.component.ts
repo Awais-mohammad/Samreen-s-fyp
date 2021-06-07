@@ -153,7 +153,7 @@ export class CreateuserformComponent implements OnInit {
       }).then(() => {
         secondApp.delete()
 
-        console.log('session fucked off');
+        console.log('Session off');
       })
 
     }
