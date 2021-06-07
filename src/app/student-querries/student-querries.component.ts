@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { HttpClient, HttpRequest, HttpEvent, HttpResponse, HttpEventType } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-student-querries',
@@ -16,6 +17,10 @@ export class StudentQuerriesComponent implements OnInit {
     private http: HttpClient,
   ) { }
 
+  imageURL: string;
+  selectedFiles: FileList;
+  currentFile: File;
+  
   ngOnInit(): void {
   }
 
@@ -31,7 +36,7 @@ export class StudentQuerriesComponent implements OnInit {
 
     return this.http.request(req);
   }
-
+  
 
   /////////select file/////////////////
   selectFile(event) {
