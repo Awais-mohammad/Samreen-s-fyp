@@ -1,0 +1,33 @@
+.card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    min-height: 300px;
+    margin: 1rem;
+    position: relative;
+    transition: 1s;
+    width: 300px;
+}
+.card-wrap {
+    background: #fff;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 300px;
+    margin: 1rem;
+    position: relative;
+    top: 2em;
+    transition: 1s;
+    width: 97%;
+}
+.card-wrap:hover {
+    border-radius: 25px;
+    width: 95%;
+}
+.card:hover {
+    cursor: pointer;
+}
+.card-2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
