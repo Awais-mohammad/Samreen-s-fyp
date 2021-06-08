@@ -12,7 +12,7 @@
 
 
       <div *ngIf="user && user=='Admin'" class="lists">
-        <p mat-list-item>
+        <p  (click)="gotopage('admin-dashboard')" mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
           DASHBOARD
         </p>
@@ -22,7 +22,7 @@
           Final Year Project
         </p>
 
-        <p mat-list-item>
+        <p (click)="gotopage('student-querries')" mat-list-item>
           <mat-icon class="i" matPrefix>contact_support</mat-icon>
           Student Queries
         </p>
@@ -99,14 +99,14 @@
           Final Year Project
         </p>
 
-        <p mat-list-item>
+        <p (click)="gotopage('student-dashboard')" mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
           Group Formation
         </p>
 
         <p (click)="gotopage('student-proposal')" mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
-          Add Porposal
+          Add Proposal
         </p>
 
         <p (click)="gotopage('student-querries')" mat-list-item>

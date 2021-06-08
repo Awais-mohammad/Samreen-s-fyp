@@ -1,0 +1,58 @@
+.box1 {
+  background: linear-gradient(to right, #516395, #614385);
+    border-radius: 2px;
+    display: inline-block;
+    min-height: 425px;
+    top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    margin: 1rem;
+    position: relative;
+    transition: 1s;
+    width: 600px;
+    text-align: center;
+   
+}
+.box2 {
+  background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    min-height: 250px;
+    margin: 1rem;
+    top: 50%;
+    left:50%;
+  transform: translate(-50%, -50%);
+    position: absolute;
+    transition: 1s;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16), 0 5px 8px rgba(0, 0, 0, 0.23);
+   
+}
+.box2 input{
+  text-align: center;
+}
+.box1 h1{
+  color:white;
+  top: 10%;
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+.box2 h1{
+  top: 10%;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+.spacing2{
+  padding: 8px 6px;
+  margin: 10px auto;
+  
+}
+.i{
+  margin-left:20px;
+}

@@ -1,37 +1,50 @@
 <app-main-nav>
 
   <div class="card-wrap card-2">
+    
 
     <div style="width: 40%;padding: 20px;" class="card card-2">
-      <h1>Aplication</h1>
+      <h1 style="font-weight:bold">Application</h1>
+      <div class="spacing2">
+
+      </div>
 
       <input (change)="selectFile($event)" type="file" id="myfile" name="myfile"><br><br>
       <div class="text-center">
+        <br>
         <button (click)="addQuerry('Application')" style="width:7em" type="submit"
-          class="btn btn-primary">Submit</button>
+          class="btn btn-primary" mat-raised-button color="warn">Submit</button>
       </div>
 
 
     </div>
 
     <div style="width: 40%;padding: 20px;" class="card card-2">
-      <h1>Certificate</h1>
+      <h1 style="font-weight:bold">Certificate</h1>
+      <div class="spacing2">
+
+      </div>
       <input (change)="selectFile($event)" type="file" id="myfile" name="myfile"><br><br>
       <div class="text-center">
+        <br>
         <button (click)="addQuerry('Certificate')" style="width:7em" type="submit"
-          class="btn btn-primary">Submit</button>
+          class="btn btn-primary"mat-raised-button color="warn">Submit</button>
       </div>
 
     </div>
 
-    <div style="width: 100%;padding: 20px;" class="card card-2">
-      <h1>Letter</h1>
+    <div style="width: 87%;padding: 20px;" class="card card-2">
+      <h1 style="font-weight:bold">Letter</h1>
+      <div class="spacing2">
+
+      </div>
       <input (change)="selectFile($event)" type="file" id="myfile" name="myfile"><br><br>
       <div class="text-center">
-        <button (click)="addQuerry('Letter')" style="width:7em" type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <button (click)="addQuerry('Letter')" style="width:7em" type="submit" class="btn btn-primary" mat-raised-button color="warn">Submit</button>
       </div>
     </div>
-
+    
   </div>
   <div>
 
