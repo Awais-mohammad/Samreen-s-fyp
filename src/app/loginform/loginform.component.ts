@@ -74,16 +74,16 @@ export class LoginformComponent implements OnInit {
             this.gotoPage('admin-dashboard')
           }
           else if (c_user.userTyp == 'Supervisor') {
-            alert(' Not Register or Invalid credentials')
+            this.gotoPage('supervisor-dashboard')
           }
           else if (c_user.userTyp == 'Co-ordinator') {
-            alert('Not Register or Invalid credentials')
+            this.gotoPage('cordinator-dashboard')
           }
           else if (c_user.userTyp == 'Staff') {
-            alert('Not Register or Invalid credentials')
+            this.gotoPage('staff-dashboard')
           }
           else if (c_user.userTyp == 'Evaluator') {
-            alert('Not Register or Invalid credentials')
+            this.gotoPage('evaluator-dashboard')
           }
           else {
             this.auth.auth.signOut()

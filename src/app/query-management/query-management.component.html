@@ -1,0 +1,22 @@
+<app-main-nav>
+
+    <h1>
+        Querries
+    </h1>
+
+    <div *ngIf="obtainedQuerries" style="padding: 10px;text-align: center;">
+
+        <div style="display: flex;border: 1px solid white;max-width: 80%;background-color: rgba(136, 123, 123, 0.226);border-radius: 25px;padding: 10px;"
+            *ngFor="let item of obtainedQuerries">
+            <a href="{{item.file}}" target="_blank">
+                View document
+            </a>
+            <p>
+                querry for: {{item.queryFor}}
+                queryFrom: {{item.queryFrom}}
+            </p>
+        </div>
+
+    </div>
+
+</app-main-nav>

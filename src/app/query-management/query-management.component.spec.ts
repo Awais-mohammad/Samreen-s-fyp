@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TeacherDashboardComponent } from './teacher-dashboard.component';
+import { QueryManagementComponent } from './query-management.component';
 
-describe('TeacherDashboardComponent', () => {
-  let component: TeacherDashboardComponent;
-  let fixture: ComponentFixture<TeacherDashboardComponent>;
+describe('QueryManagementComponent', () => {
+  let component: QueryManagementComponent;
+  let fixture: ComponentFixture<QueryManagementComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TeacherDashboardComponent ]
+      declarations: [ QueryManagementComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TeacherDashboardComponent);
+    fixture = TestBed.createComponent(QueryManagementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

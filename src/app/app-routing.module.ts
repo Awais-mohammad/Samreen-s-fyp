@@ -1,7 +1,8 @@
+import { QueryManagementComponent } from './query-management/query-management.component';
+import { CordinatorDashboardComponent } from './cordinator-dashboard/cordinator-dashboard.component';
 import { StudentProposalComponent } from './student-proposal/student-proposal.component';
 import { StudentQuerriesComponent } from './student-querries/student-querries.component';
 import { SupervisorDashboardComponent } from './supervisor-dashboard/supervisor-dashboard.component';
-import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { EvaluatorDashboardComponent } from './evaluator-dashboard/evaluator-dashboard.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
@@ -37,10 +38,7 @@ const routes: Routes = [
     path: "evaluator-dashboard",
     component: EvaluatorDashboardComponent,
   },
-  {
-    path: "teacher-dashboard",
-    component: TeacherDashboardComponent,
-  },
+
   {
     path: "supervisor-dashboard",
     component: SupervisorDashboardComponent,
@@ -51,7 +49,15 @@ const routes: Routes = [
   }, {
     path: 'student-proposal',
     component: StudentProposalComponent
+  }, {
+    path: 'cordonator-dashboard',
+    component: CordinatorDashboardComponent
+  },
+  {
+    path: 'query-management',
+    component: QueryManagementComponent
   }
+
 
 
 
@@ -69,8 +75,10 @@ export const routingComponents = [
   AuthenticationComponent,
   AdminDashboardComponent,
   StudentDashboardComponent,
-  TeacherDashboardComponent, SupervisorDashboardComponent,
+  SupervisorDashboardComponent,
   StaffDashboardComponent, EvaluatorDashboardComponent,
   StudentQuerriesComponent,
-  StudentProposalComponent
+  StudentProposalComponent,
+  CordinatorDashboardComponent,
+  QueryManagementComponent,
 ]
