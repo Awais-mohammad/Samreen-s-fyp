@@ -4,12 +4,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { HttpClient, HttpRequest, HttpEvent, HttpResponse, HttpEventType } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 @Component({
-  selector: 'app-student-querries',
-  templateUrl: './student-querries.component.html',
-  styleUrls: ['./student-querries.component.scss']
+  selector: 'app-student-proposal',
+  templateUrl: './student-proposal.component.html',
+  styleUrls: ['./student-proposal.component.scss']
 })
-export class StudentQuerriesComponent implements OnInit {
+export class StudentProposalComponent implements OnInit {
 
   constructor(
     private firestore: AngularFirestore,
@@ -21,9 +22,6 @@ export class StudentQuerriesComponent implements OnInit {
   selectedFiles: FileList;
   currentFile: File;
 
-  ngOnInit(): void {
-    this.getuser()
-  }
 
 
   /////////upload file to server/////////////////
@@ -84,32 +82,59 @@ export class StudentQuerriesComponent implements OnInit {
 
   }
 
-  addQuerry(typ) {
+  addProposal() {
 
-    if (!this.fileURL) {
-      alert('choose a file')
-    }
-
-    else {
-      const queryFrom = this.studentData.Df.sn.proto.mapValue.fields.name.stringValue
-      const queriedAt = new Date()
-      const file = this.fileURL
-      const queryFor = typ
-      this.firestore.collection('querry').add({
-        queryFrom,
-        queriedAt,
-        file,
-        queryFor
-      }).then((doc) => {
-        const docID = doc.id
-        this.firestore.collection('querry').doc(doc.id).update({
-          docID
-        }).then(() => {
-          alert('querry added')
-        })
-      })
-    }
   }
 
+
+  tempmem: any[]
+  submit() {
+
+    this.firestore.collection('fyp').valueChanges().subscribe((res: any) => {
+
+      for (var i = 0; i < res.length; i++) {
+
+        console.log('resi', res[i]);
+
+        if (res[i].members) {
+          console.log(res[i].members);
+          this.tempmem = res[i].members
+
+          for (var k = 0; k < this.tempmem.length; k++) {
+            console.log(this.tempmem[k]);
+
+            if (this.tempmem[k].userID == this.studentData.Df.sn.proto.mapValue.fields.userID.stringValue) {
+
+              const fileURL = this.fileURL
+              const addedBy = this.studentData.Df.sn.proto.mapValue.fields.name.stringValue
+              const parentdocID = res[i].docID
+              this.firestore.collection('fyp').doc(parentdocID).collection('proposal').add({
+                fileURL, addedBy
+              }).then((doc) => {
+                const docID = doc.id
+                this.firestore.collection('fyp').doc(parentdocID).collection('proposal').doc(doc.id).update({
+                  docID
+                })
+              }).then(() => {
+                alert('proposal submiiteddd')
+              })
+
+            }
+
+          }
+
+
+        }
+
+      }
+
+
+    })
+
+  }
+
+  ngOnInit(): void {
+    this.getuser()
+  }
 
 }

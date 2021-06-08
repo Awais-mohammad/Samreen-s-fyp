@@ -6,18 +6,14 @@
 
             <h1 class="center">Group Formation</h1>
 
-            
 
-
-
-           
 
             <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;padding-top: 20px;">
-                Choose members and supervisor
+                Choose members, program and supervisor
             </p>
 
             <div class="flex">
-                
+
                 <mat-form-field *ngIf="evaluators" class="field select" color="primary" appearance="outline">
 
                     <mat-label>Choose Supervisor</mat-label>
@@ -31,10 +27,20 @@
 
                 </mat-form-field>
 
-                <div style="width: 10em;">
+                <mat-form-field style="margin-left: 2px;margin-right: 4px;" *ngIf="students" class="field select"
+                    color="primary" appearance="outline">
 
-                </div>
+                    <mat-label>Choose program</mat-label>
+                    <mat-icon matPrefix>loyalty</mat-icon>
+                    <mat-select (selectionChange)="choosedprogram($event.value)" matNativeControl>
+                        <mat-option *ngFor="let item of degree" [value]="item">{{item}}</mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="error=='shift'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">
+                        {{errormsg}}
+                    </mat-hint>
 
+
+                </mat-form-field>
                 <div style="display: flex;flex-direction: column;">
                     <mat-form-field *ngIf="students" class="field select" color="primary" appearance="outline">
 
@@ -64,7 +70,8 @@
                 Enter your project idea in detail
             </p>
             <mat-form-field class="fieldone" color="primary" appearance="outline">
-                <mat-label style="font-family: Verdana, Geneva, Tahoma, sans-serif;;" class="noto">Provide the complete project idea dear</mat-label>
+                <mat-label style="font-family: Verdana, Geneva, Tahoma, sans-serif;;" class="noto">Provide the complete
+                    project idea dear</mat-label>
                 <mat-icon matPrefix>lightbulb</mat-icon>
                 <input [(ngModel)]="idea" type="text" matInput placeholder="What is your proj idea?">
 
@@ -72,15 +79,16 @@
 
             <div style="padding-top: 1em;">
                 <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
-                    SAMPLE TEMPLATE
+                    IDEA SAMPLE
                 </h4>
                 <a href="https://exportportal.site/vendors/2.jpg" target="_blank">
-                    <button mat-fab color="warn">
-                        <mat-icon>download</mat-icon>
+                    <button mat-fab color="light">
+                        <mat-icon>visibility</mat-icon>
                     </button>
                 </a>
-    
+
             </div>
+
 
 
             <div style="text-align: right;">
@@ -89,11 +97,11 @@
 
 
 
-            
+
 
         </mat-card>
 
-    
+
 
 
         <div *ngIf="groupformation" class="cell">

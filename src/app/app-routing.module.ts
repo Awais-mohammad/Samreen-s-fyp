@@ -1,3 +1,4 @@
+import { StudentProposalComponent } from './student-proposal/student-proposal.component';
 import { StudentQuerriesComponent } from './student-querries/student-querries.component';
 import { SupervisorDashboardComponent } from './supervisor-dashboard/supervisor-dashboard.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
@@ -47,6 +48,9 @@ const routes: Routes = [
   {
     path: "student-querries",
     component: StudentQuerriesComponent,
+  }, {
+    path: 'student-proposal',
+    component: StudentProposalComponent
   }
 
 
@@ -67,5 +71,6 @@ export const routingComponents = [
   StudentDashboardComponent,
   TeacherDashboardComponent, SupervisorDashboardComponent,
   StaffDashboardComponent, EvaluatorDashboardComponent,
-  StudentQuerriesComponent
+  StudentQuerriesComponent,
+  StudentProposalComponent
 ]

@@ -79,6 +79,18 @@
 
         </mat-form-field>
 
+        <mat-form-field *ngIf="data.user=='Student'" class="field" color="primary" appearance="outline">
+
+            <mat-label>Choose Program</mat-label>
+            <mat-icon matPrefix>batch_prediction</mat-icon>
+            <mat-select matNativeControl [(ngModel)]="choosedProgram">
+                <mat-option *ngFor="let item of programs" [value]="item">{{item}}</mat-option>
+            </mat-select>
+            <mat-hint *ngIf="error=='program'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">{{errormsg}}
+            </mat-hint>
+
+        </mat-form-field>
+
 
     </div>
 

@@ -9,7 +9,7 @@
         UIIT Automation
       </h3>
 
-      
+
 
       <div *ngIf="user && user=='Admin'" class="lists">
         <p mat-list-item>
@@ -89,7 +89,12 @@
       </div>
 
       <div *ngIf="user && user=='Student'" class="lists">
-        <p mat-list-item>
+        <p class="active" *ngIf="cuurentPage == '/student-dashboard'" mat-list-item>
+          <mat-icon class="i" matPrefix>computer</mat-icon>
+          Final Year Project
+        </p>
+
+        <p *ngIf="cuurentPage != '/student-dashboard'" mat-list-item>
           <mat-icon class="i" matPrefix>computer</mat-icon>
           Final Year Project
         </p>
@@ -99,7 +104,12 @@
           Group Formation
         </p>
 
-        <p mat-list-item>
+        <p (click)="gotopage('student-proposal')" mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Add Porposal
+        </p>
+
+        <p (click)="gotopage('student-querries')" mat-list-item>
           <mat-icon class="i" matPrefix>contact_support</mat-icon>
           Student Queries
         </p>

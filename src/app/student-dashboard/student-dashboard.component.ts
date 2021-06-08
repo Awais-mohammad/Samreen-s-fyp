@@ -23,6 +23,7 @@ export class StudentDashboardComponent implements OnInit {
   students: any[]
   choosedpartners: any[] = []
   idea: string;
+  degree: string[] = ['Software', 'ComputerScience', 'BBA', 'BioInformatics']
 
   getuser() {
 
@@ -46,7 +47,8 @@ export class StudentDashboardComponent implements OnInit {
 
   availablepartners() {
     this.firestore.collection('users', q => q.where('batch', '==', this.studentData.Df.sn.proto.mapValue.fields.batch.stringValue)
-      .where('shift', '==', this.studentData.Df.sn.proto.mapValue.fields.shift.stringValue)).valueChanges().subscribe((data: any) => {
+      .where('shift', '==', this.studentData.Df.sn.proto.mapValue.fields.shift.stringValue)
+      .where('program', '==', this.studentData.Df.sn.proto.mapValue.fields.program.stringValue)).valueChanges().subscribe((data: any) => {
         if (data.length < 1) {
           console.log('no one found yu ashole');
 
@@ -77,8 +79,8 @@ export class StudentDashboardComponent implements OnInit {
     this.choosedpartners.splice(param, 1)
   }
 
-  getevaluator() {
-    this.firestore.collection('users', q => q.where('userTyp', '==', 'Evaluator')).valueChanges().subscribe(data => {
+  getsupervior() {
+    this.firestore.collection('users', q => q.where('userTyp', '==', 'Supervisor')).valueChanges().subscribe(data => {
 
       if (data.length < 1) {
         console.log('no evaluator found');
@@ -110,6 +112,9 @@ export class StudentDashboardComponent implements OnInit {
     else if (!this.idea) {
       alert('idea??')
     }
+    else if (!this.choosedprogram) {
+      alert('where the fuck is progra,')
+    }
     else {
 
       const evaluator = this.evaluator
@@ -118,8 +123,9 @@ export class StudentDashboardComponent implements OnInit {
       const members = this.choosedpartners
       const approved = 'false'
       const idea = this.idea
+      const program = this.programChoosed
       this.firestore.collection('fyp').add({
-        evaluator, time, members, createdBy, approved, idea
+        evaluator, time, members, createdBy, approved, idea, program,
       }).then((doc) => {
         const docID = doc.id
         this.firestore.collection('fyp').doc(doc.id).update({
@@ -134,6 +140,13 @@ export class StudentDashboardComponent implements OnInit {
 
   tempmem: any[]
   groupformation: boolean = false;
+  programChoosed: string;
+
+  choosedprogram(val) {
+    this.programChoosed = val
+    console.log(this.programChoosed);
+    
+  }
 
   checkSubmission(userID: string) {
 
@@ -168,7 +181,9 @@ export class StudentDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getuser()
-    this.getevaluator()
+    this.getsupervior()
+
+
   }
 
 }

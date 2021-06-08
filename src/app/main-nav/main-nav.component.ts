@@ -26,6 +26,7 @@ export class MainNavComponent {
     private firestore: AngularFirestore,
   ) {
     this.userTyp()
+    this.getPath()
   }
 
   typesOfShoes: string[] = ['Profile', 'Logout'];
@@ -49,7 +50,7 @@ export class MainNavComponent {
       this.logout()
     }
   }
-//;legp
+  //;legp
   logout() {
     this.auth.auth.signOut().then(() => {
       this.router.navigate(['authentication'])
@@ -72,6 +73,18 @@ export class MainNavComponent {
         })
       }
     })
+  }
+
+  cuurentPage: string;
+
+  getPath() {
+    this.cuurentPage = this.router.url
+    console.log(this.cuurentPage);
+
+  }
+
+  gotopage(name: string) {
+    this.router.navigate([name])
   }
 
 }

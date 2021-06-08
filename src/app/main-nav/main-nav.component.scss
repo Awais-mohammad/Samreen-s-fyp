@@ -54,7 +54,6 @@ p {
 }
 
 p:hover {
- 
   cursor: pointer;
   border-left: 4px solid purple;
   background: rgba(112, 8, 65, 0.185);
@@ -113,3 +112,8 @@ mat-selection-list {
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mukta&display=swap");
+.active {
+  background: rgb(55, 10, 179);
+  color: white;
+  border-left: 3px solid pink;
+}

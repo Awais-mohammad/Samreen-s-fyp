@@ -7,6 +7,7 @@
     position: relative;
     transition: 1s;
     width: 300px;
+    text-align: center;
 }
 .card-wrap {
     background: #fff;
@@ -21,10 +22,7 @@
     transition: 1s;
     width: 97%;
 }
-.card-wrap:hover {
-    border-radius: 25px;
-    width: 95%;
-}
+
 .card:hover {
     cursor: pointer;
 }

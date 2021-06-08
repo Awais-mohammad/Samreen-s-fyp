@@ -56,7 +56,6 @@ export class AdminDashboardComponent implements OnInit {
   evaluators: any;
   supervisors: any;
 
-
   manage(uType: string) {
     this.currentDiv = uType
 

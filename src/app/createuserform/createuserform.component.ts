@@ -43,6 +43,8 @@ export class CreateuserformComponent implements OnInit {
   choosedShit: string;
   batches: string[] = ['183', '201', '333']
   choosedbatch: string;
+  programs: string[] = ['Software', 'ComputerScience', 'BBA', 'BioInformatics']
+  choosedProgram: string;
 
   showspin() {
     this.spin = !this.spin
@@ -97,6 +99,11 @@ export class CreateuserformComponent implements OnInit {
       this.errormsg = 'choose a batch'
       this.showspin()
     }
+    else if (!this.choosedProgram) {
+      this.error = 'program'
+      this.errormsg = 'Choose a program'
+      this.showspin()
+    }
     else {
 
 
@@ -107,7 +114,7 @@ export class CreateuserformComponent implements OnInit {
   createUser() {
 
     console.log('in here');
-    
+
     if (this.data.user == 'Student') {
       const name = this.name;
       const email = this.email;
@@ -118,6 +125,7 @@ export class CreateuserformComponent implements OnInit {
       const year = new Date().getFullYear()
       const regNo = this.regNo
       const shift = this.choosedShit;
+      const program = this.choosedProgram
       const batch = this.choosedbatch
       var config = {
         apiKey: "AIzaSyDnwsMEwSY3DZ7ja5RB200xN1lTvjpFyI4",
@@ -136,7 +144,7 @@ export class CreateuserformComponent implements OnInit {
         console.log(user.user.uid);
         const userID = user.user.uid
         this.firestore.collection('users').doc(user.user.uid).set({
-          name, email, password, phone, userTyp, timestamp, year, regNo, shift, userID, batch
+          name, email, password, phone, userTyp, timestamp, year, regNo, shift, userID, batch, program
         }).then(() => {
           this.openSnackBar(userTyp + ' created successfully at ' + timestamp, 3000)
 
