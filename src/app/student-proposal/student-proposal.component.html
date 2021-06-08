@@ -1,16 +1,29 @@
 <app-main-nav>
+ <mat-card class="box1">
+    <h1>
 
-    <mat-card>
+        Proposal Submission
 
-        <h1 style="text-align: center;">
+    </h1>
 
-            UPLOAD PROPOSAL
+ </mat-card>
+ <mat-card class="box2">
+            <h1>
+    
+                Proposal 
+    
+            </h1>
+            
+            <h3>Attach Proposal Document </h3>
+            
+<div class= "i">
+                <input (change)="selectFile($event)" type="file">
+            </div>
+                <div class="spacing2">
 
-        </h1>
-
-        <input (change)="selectFile($event)" type="file">
-
-        <button (click)="submit()" mat-raised-button color="warn">ADD PROPOSAL</button>
-    </mat-card>
-
+                </div>
+    
+            <button (click)="submit()" mat-raised-button color="warn">Submit PROPOSAL</button>
+ 
+        </mat-card>
 </app-main-nav>

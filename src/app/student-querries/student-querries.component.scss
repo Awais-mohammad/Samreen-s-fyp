@@ -10,7 +10,7 @@
     text-align: center;
 }
 .card-wrap {
-    background: #fff;
+    background: linear-gradient(to right, #516395, #614385);
     border-radius: 2px;
     display: flex;
     justify-content: center;
@@ -29,3 +29,10 @@
 .card-2 {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
+
+.spacing2{
+    padding: 8px 6px;
+    margin: 10px auto;
+    
+  }
