@@ -30,34 +30,29 @@
           Student Queries
         </p>
 
-        <p mat-list-item>
-          <mat-icon class="i" matPrefix>account_circle</mat-icon>
-          Profile
-        </p>
-
       </div>
 
       <div *ngIf="user && user=='Coordinator'" class="lists">
         <p mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
-          Final Year Project
+          Final Year Projects
         </p>
 
         <p mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
-          Supervisor
+          Supervisors
         </p>
 
         <p mat-list-item>
           <mat-icon class="i" matPrefix>person</mat-icon>
-          Evaluator
+          Evaluators
         </p>
 
       </div>
 
 
       <div *ngIf="user && user=='Supervisor'" class="lists">
-        <p mat-list-item>
+        <p (click)="gotopage('supervisor-dashboard')" mat-list-item >
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
           Supervision Groups
         </p>
@@ -65,7 +60,7 @@
       </div>
 
       <div *ngIf="user && user=='Evaluator'" class="lists">
-        <p mat-list-item>
+        <p (click)="gotopage('evaluator-dashboard')" mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
           Evaluation Groups
         </p>
