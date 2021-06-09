@@ -99,7 +99,7 @@ export class CreateuserformComponent implements OnInit {
       this.errormsg = 'choose a batch'
       this.showspin()
     }
-    else if (!this.choosedProgram) {
+    else if (!this.choosedProgram && this.data.user == 'Student') {
       this.error = 'program'
       this.errormsg = 'Choose a program'
       this.showspin()
