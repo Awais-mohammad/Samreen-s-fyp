@@ -1,22 +1,57 @@
 <app-main-nav>
-
-    <h1>
-        Querries
+    <mat-card class="cardd">
+    <h1 style="font-family:robboto;font-weight: bold;">
+        Queries
     </h1>
 
     <div *ngIf="obtainedQuerries" style="padding: 10px;text-align: center;">
 
-        <div style="display: flex;border: 1px solid white;max-width: 80%;background-color: rgba(136, 123, 123, 0.226);border-radius: 25px;padding: 10px;"
+        <div 
             *ngFor="let item of obtainedQuerries">
-            <a href="{{item.file}}" target="_blank">
-                View document
-            </a>
-            <p>
-                querry for: {{item.queryFor}}
-                queryFrom: {{item.queryFrom}}
-            </p>
+
+            <table>
+                <tr>
+      
+      
+                    <th class="tablehead">
+                        Query For
+                    </th>
+      
+                    <th class="tablehead">
+                        Query From
+                    </th>
+      
+                    <th class="tablehead">
+                        Document
+                    </th>
+      
+                    <th class="tablehead">
+                        Action
+                    </th>
+      
+      
+      
+                </tr>
+                <tr >
+                    <td> {{item.queryFor}}</td>
+                    <td> {{item.queryFrom}}</td>
+
+                    <td><a href="{{item.file}}" target="_blank">
+                        View document
+                    </a></td>
+                    <td>
+                        <button  mat-raised-button color="primary">Approve</button>
+                        <button  mat-raised-button color="warn">Reject</button>
+                    </td>
+                    
+        
+                </tr>
+      
+            </table>
+           
+            
         </div>
 
     </div>
-
+</mat-card>
 </app-main-nav>

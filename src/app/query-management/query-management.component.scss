@@ -1,0 +1,22 @@
+.cardd {
+  position: relative;
+  top: 2em;
+  padding: 20px;
+}
+
+table,
+td,
+th {
+    border: 1px solid rgba(0, 0, 0, 0.342);
+    padding: 10px;
+}
+
+.tablehead {
+    font-family: "Open Sans ", sans-serif;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
