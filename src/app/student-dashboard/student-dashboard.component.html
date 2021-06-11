@@ -2,7 +2,7 @@
 
 
     <div class="main">
-        <mat-card *ngIf="!groupformation" class="card">
+        <mat-card *ngIf="!groupformation && !stat" class="card">
 
             <h1 class="center">Group Formation</h1>
 
@@ -104,7 +104,7 @@
 
 
 
-        <div *ngIf="groupformation" class="cell">
+        <div *ngIf="groupformation  && !stat" class="cell">
             <div class="loader5"></div>
             <div>
                 <h2
@@ -114,6 +114,19 @@
             </div>
         </div>
 
+
+        <div *ngIf="!groupformation  && stat" class="cell">
+
+            <mat-card>
+                <h1>
+                    Project approved
+                </h1>
+                <p>
+                    Tasks alotion and al is underdevelopemnt
+                </p>
+            </mat-card>
+
+        </div>
     </div>
 
 </app-main-nav>

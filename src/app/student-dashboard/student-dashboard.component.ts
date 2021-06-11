@@ -14,7 +14,7 @@ export class StudentDashboardComponent implements OnInit {
     private firestore: AngularFirestore,
   ) { }
 
-  evaluator: string;
+  evaluator: any;
   evaluators: any[];
   error: string;
   errormsg: string;
@@ -117,7 +117,8 @@ export class StudentDashboardComponent implements OnInit {
     }
     else {
 
-      const evaluator = this.evaluator
+      const supervisorname = this.evaluator.name
+      const supervisorID = this.evaluator.userID
       const time = new Date()
       const createdBy = this.studentData.Df.sn.proto.mapValue.fields.name.stringValue
       const members = this.choosedpartners
@@ -125,7 +126,7 @@ export class StudentDashboardComponent implements OnInit {
       const idea = this.idea
       const program = this.programChoosed
       this.firestore.collection('fyp').add({
-        evaluator, time, members, createdBy, approved, idea, program,
+        supervisorname, supervisorID, time, members, createdBy, approved, idea, program,
       }).then((doc) => {
         const docID = doc.id
         this.firestore.collection('fyp').doc(doc.id).update({
@@ -138,14 +139,16 @@ export class StudentDashboardComponent implements OnInit {
     }
   }
 
+
   tempmem: any[]
   groupformation: boolean = false;
   programChoosed: string;
+  stat: boolean = false;
 
   choosedprogram(val) {
     this.programChoosed = val
     console.log(this.programChoosed);
-    
+
   }
 
   checkSubmission(userID: string) {
@@ -164,7 +167,16 @@ export class StudentDashboardComponent implements OnInit {
             console.log(this.tempmem[k]);
 
             if (this.tempmem[k].userID == this.studentData.Df.sn.proto.mapValue.fields.userID.stringValue) {
-              this.groupformation = true
+
+              if (res[i].approved == true) {
+
+                this.stat = true
+                this.groupformation = false
+              }
+              else {
+                this.groupformation = true
+                this.stat = false
+              }
             }
 
           }

@@ -70,7 +70,13 @@ export class MainNavComponent {
             console.log('user type is', this.user);
 
           }
+          else {
+            this.gotopage('authentication')
+          }
         })
+      }
+      else{
+        this.gotopage('authentication')
       }
     })
   }

@@ -1,3 +1,63 @@
 <app-main-nav>
-    
+
+    <div style="padding: 10px;position: absolute;top: 20%;width: 96%;">
+
+        <table *ngIf="alldata">
+            <tr>
+
+
+
+
+                <th class="tablehead">
+                    DOCUMENT ID
+                </th>
+
+                <th class="tablehead">
+                    Queried AT
+                </th>
+
+                <th class="tablehead">
+                    Query FOr
+                </th>
+
+                <th class="tablehead">
+                    ACTION </th>
+
+
+
+
+            </tr>
+            <tr *ngFor="let item of alldata">
+
+
+
+
+                <td>
+                    {{item.docID}}
+                </td>
+
+                <td>
+                    {{item.queriedAt}}
+                </td>
+
+
+                <td>
+                    {{item.queryFor}}
+                </td>
+
+
+                <td>
+                    <a target="_blank" href="{{item.file}}">
+                        <button mat-raised-button color="primary">VIEW</button>
+                    </a>
+
+                </td>
+
+
+            </tr>
+
+        </table>
+
+    </div>
+
 </app-main-nav>

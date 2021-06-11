@@ -1,60 +1,79 @@
-  <app-main-nav>
+<app-main-nav>
     <mat-card class="cardd">
 
-      <div class="df">
+        <div class="df">
 
-          <h1 class="h1">
-               Groups Detail
-          </h1>
-      </div>
+            <h1 class="h1">
+                Groups Detail
+            </h1>
+        </div>
 
-      <hr>
+        <hr>
 
-      <div class="pt10">
-
-         
-          <form>
-              <input #search type="text" class="textbox" placeholder="Search">
-              <input  title="Search" value="GO" type="submit" class="button">
-          </form>
-
-      </div>
-    <br>
-      <table>
-          <tr>
+        <div class="pt10">
 
 
-              <th class="tablehead">
-                  Project Id
-              </th>
+            <form>
+                <input #search type="text" class="textbox" placeholder="Search">
+                <input title="Search" value="GO" type="submit" class="button">
+            </form>
 
-              <th class="tablehead">
-                  Project Title
-              </th>
-
-              <th class="tablehead">
-                  Group Leader
-              </th>
-
-              <th class="tablehead">
-                  Group Info
-              </th>
+        </div>
+        <br>
+        <table *ngIf="fyps">
+            <tr>
 
 
+                <th class="tablehead">
+                    Project Idea
+                </th>
 
-          </tr>
-          <tr >
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <button   mat-raised-button color="primary">Approve</button>
-              </td>
-              
-  
-          </tr>
+                <th class="tablehead">
+                    Project ID
+                </th>
 
-      </table>
+                <th class="tablehead">
+                    Group member 1
+                </th>
 
-  </mat-card>
-  </app-main-nav>
+                <th class="tablehead">
+                    Group member 2
+                </th>
+
+                <th class="tablehead">
+                    Group member 3
+                </th>
+
+                <th class="tablehead">
+                    ACTION </th>
+
+
+
+
+            </tr>
+            <tr *ngFor="let item of fyps">
+
+                <td>
+                    {{item.idea}}
+                </td>
+
+
+                <td>
+                    {{item.docID}}
+                </td>
+
+                <td *ngFor="let ite of item.members">
+                    {{ite.name}}
+                </td>
+
+                <td>
+                    <button (click)="approveProj(item.docID)" mat-raised-button color="primary">APPROVE</button>
+                </td>
+
+
+            </tr>
+
+        </table>
+
+    </mat-card>
+</app-main-nav>

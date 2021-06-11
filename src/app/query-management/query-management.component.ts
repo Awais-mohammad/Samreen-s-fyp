@@ -17,8 +17,24 @@ export class QueryManagementComponent implements OnInit {
   obtainedQuerries: any;
 
   getQuerries() {
+    const assignStaff = false
     this.firestore.collection('querry').valueChanges().subscribe(data => {
       this.obtainedQuerries = data
+    })
+  }
+
+  assignToStaff(qID) {
+    const assignStaff = true
+    this.firestore.collection('querry').doc(qID).update({
+      assignStaff
+    }).then(() => {
+      alert('assigned To Staff')
+    })
+  }
+
+  reject(qID) {
+    this.firestore.collection('querry').doc(qID).delete().then(() => {
+      alert('deleted')
     })
   }
 
