@@ -168,7 +168,7 @@ export class StudentDashboardComponent implements OnInit {
 
             if (this.tempmem[k].userID == this.studentData.Df.sn.proto.mapValue.fields.userID.stringValue) {
 
-              if (res[i].approved == true) {
+              if (res[i].approved == 'true') {
 
                 this.stat = true
                 this.groupformation = false
