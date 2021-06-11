@@ -12,7 +12,7 @@
 
 
       <div *ngIf="user && user=='Admin'" class="lists">
-        <p (click)="gotopage('admin-dashboard')" mat-list-item>
+        <p class="active" *ngIf="cuurentPage == '/admin-dashboard'" (click)="gotopage('admin-dashboard')" mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
           DASHBOARD
         </p>
@@ -52,7 +52,7 @@
 
 
       <div *ngIf="user && user=='Supervisor'" class="lists">
-        <p (click)="gotopage('supervisor-dashboard')" mat-list-item >
+        <p (click)="gotopage('supervisor-dashboard')" mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
           Supervision Groups
         </p>
@@ -67,11 +67,17 @@
 
 
       </div>
+      <!--class="active" *ngIf="cuurentPage == '/student-dashboard'"-->
 
       <div *ngIf="user && user=='Staff'" class="lists">
-        <p mat-list-item>
+        <p (click)="gotopage('staff-dashboard')" class="active" *ngIf="cuurentPage == '/staff-dashboard'" mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
-          Application
+          Dashboard
+        </p>
+
+        <p class="active" *ngIf="cuurentPage != '/staff-dashboard'" mat-list-item>
+          <mat-icon (click)="gotopage('staff-dashboard')" class="i" matPrefix>dashboard</mat-icon>
+          Dashboard
         </p>
 
         <p mat-list-item>
