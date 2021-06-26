@@ -24,7 +24,7 @@ export class SupervisorDashboardComponent implements OnInit {
 
     this.firestore.collection('fyp', q => q.where('supervisorID', '==', uid).where('approved', '==', approved)).valueChanges().subscribe(data => {
       if (data.length < 1) {
-        console.log('data not foung');
+        console.log('data not found');
 
       }
       else {

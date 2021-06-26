@@ -23,7 +23,7 @@ export class StudentDashboardComponent implements OnInit {
   students: any[]
   choosedpartners: any[] = []
   idea: string;
-  degree: string[] = ['Software', 'ComputerScience', 'BBA', 'BioInformatics']
+  degree: string[] = ['Software', 'ComputerScience', 'Information Technology']
 
   getuser() {
 
@@ -50,7 +50,7 @@ export class StudentDashboardComponent implements OnInit {
       .where('shift', '==', this.studentData.Df.sn.proto.mapValue.fields.shift.stringValue)
       .where('program', '==', this.studentData.Df.sn.proto.mapValue.fields.program.stringValue)).valueChanges().subscribe((data: any) => {
         if (data.length < 1) {
-          console.log('no one found yu ashole');
+          console.log('no one found');
 
         }
         else {
@@ -83,11 +83,11 @@ export class StudentDashboardComponent implements OnInit {
     this.firestore.collection('users', q => q.where('userTyp', '==', 'Supervisor')).valueChanges().subscribe(data => {
 
       if (data.length < 1) {
-        console.log('no evaluator found');
+        console.log('no supervisor found');
 
       }
       else {
-        console.log('evaluator', data);
+        console.log('supervisor', data);
         this.evaluators = data
       }
 
@@ -101,7 +101,7 @@ export class StudentDashboardComponent implements OnInit {
 
   addfyp() {
     if (!this.evaluator) {
-      alert('choose evaluator')
+      alert('choose supervisor')
     }
     else if (!this.choosedpartners) {
       alert('choose partner')
@@ -113,7 +113,7 @@ export class StudentDashboardComponent implements OnInit {
       alert('idea??')
     }
     else if (!this.choosedprogram) {
-      alert('where the fuck is progra,')
+      alert('program...,')
     }
     else {
 

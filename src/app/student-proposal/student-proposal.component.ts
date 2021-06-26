@@ -116,7 +116,7 @@ export class StudentProposalComponent implements OnInit {
                   docID
                 })
               }).then(() => {
-                alert('proposal submiiteddd')
+                alert('proposal submited')
               })
 
             }
