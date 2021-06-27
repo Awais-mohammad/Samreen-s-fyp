@@ -74,7 +74,7 @@ export class LoginformComponent implements OnInit {
             this.gotoPage('admin-dashboard')
           }
           else if (c_user.userTyp == 'Supervisor') {
-            this.gotoPage('supervisor-dashboard')
+            this.gotoPage('supervision-groups')
           }
           else if (c_user.userTyp == 'Co-ordinator') {
             this.gotoPage('cordinator-dashboard')

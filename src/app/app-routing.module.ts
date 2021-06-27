@@ -53,7 +53,7 @@ const routes: Routes = [
     path: 'student-proposal',
     component: StudentProposalComponent
   }, {
-    path: 'cordonator-dashboard',
+    path: 'cordinator-dashboard',
     component: CordinatorDashboardComponent
   },
   {
