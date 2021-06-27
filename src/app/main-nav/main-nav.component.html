@@ -54,6 +54,16 @@
       <div *ngIf="user && user=='Supervisor'" class="lists">
         <p (click)="gotopage('supervisor-dashboard')" mat-list-item>
           <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Project Ideas
+        </p>
+
+        <p (click)="gotopage('project-proposals')" mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
+          Project Proposals
+        </p>
+
+        <p (click)="gotopage('supervision-groups')" mat-list-item>
+          <mat-icon class="i" matPrefix>dashboard</mat-icon>
           Supervision Groups
         </p>
 

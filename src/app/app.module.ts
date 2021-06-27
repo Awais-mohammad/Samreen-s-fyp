@@ -36,6 +36,8 @@ firebase imports
 import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ProjectProposalsComponent } from './project-proposals/project-proposals.component';
+import { SupervisionGroupsComponent } from './supervision-groups/supervision-groups.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     LoginformComponent,
     MainNavComponent,
     CreateuserformComponent,
+    ProjectProposalsComponent,
+    SupervisionGroupsComponent,
  
 
   ],
