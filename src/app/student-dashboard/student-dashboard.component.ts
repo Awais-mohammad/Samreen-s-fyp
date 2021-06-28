@@ -23,7 +23,7 @@ export class StudentDashboardComponent implements OnInit {
   students: any[]
   choosedpartners: any[] = []
   idea: string;
-  degree: string[] = ['Software', 'ComputerScience', 'Information Technology']
+  degree: string[] = ['BS Software  Engineering', ' BS ComputerScience', 'BS Information Technology']
 
   getuser() {
 

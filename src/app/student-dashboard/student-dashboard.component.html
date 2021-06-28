@@ -14,18 +14,7 @@
 
             <div class="flex">
 
-                <mat-form-field *ngIf="evaluators" class="field select" color="primary" appearance="outline">
-
-                    <mat-label>Choose Supervisor</mat-label>
-                    <mat-icon matPrefix>person</mat-icon>
-                    <mat-select matNativeControl (selectionChange)="evalchoosed($event.value)">
-                        <mat-option *ngFor="let item of evaluators" [value]="item">{{item.name}}</mat-option>
-                    </mat-select>
-                    <mat-hint *ngIf="error=='shift'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">
-                        {{errormsg}}
-                    </mat-hint>
-
-                </mat-form-field>
+               
 
                 <mat-form-field style="margin-left: 2px;margin-right: 4px;" *ngIf="students" class="field select"
                     color="primary" appearance="outline">
@@ -63,6 +52,19 @@
                         </mat-chip>
                     </mat-chip-list>
                 </div>
+
+                <mat-form-field *ngIf="evaluators" class="field select" color="primary" appearance="outline">
+
+                    <mat-label>Choose Supervisor</mat-label>
+                    <mat-icon matPrefix>person</mat-icon>
+                    <mat-select matNativeControl (selectionChange)="evalchoosed($event.value)">
+                        <mat-option *ngFor="let item of evaluators" [value]="item">{{item.name}}</mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="error=='shift'" style="font-family: Roboto;color: rgba(255, 0, 0, 0.733);">
+                        {{errormsg}}
+                    </mat-hint>
+
+                </mat-form-field>
 
             </div>
 

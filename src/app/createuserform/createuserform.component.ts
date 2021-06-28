@@ -41,9 +41,9 @@ export class CreateuserformComponent implements OnInit {
   shifts: string[] = ['Morning', 'Evening']
   regNo: string;
   choosedShit: string;
-  batches: string[] = ['183', '201', '333']
+  batches: string[] = ['2021', '2022', '2023','2024','2025']
   choosedbatch: string;
-  programs: string[] = ['Software', 'ComputerScience', 'BBA', 'BioInformatics']
+  programs: string[] = ['BS Software  Engineering', ' BS ComputerScience', 'BS Information Technology']
   choosedProgram: string;
 
   showspin() {
@@ -210,7 +210,7 @@ export class CreateuserformComponent implements OnInit {
       }).then(() => {
         secondApp.delete()
 
-        console.log('session fucked off');
+        console.log('session off');
       })
 
 
