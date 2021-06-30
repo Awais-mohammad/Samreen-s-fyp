@@ -38,6 +38,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ProjectProposalsComponent } from './project-proposals/project-proposals.component';
 import { SupervisionGroupsComponent } from './supervision-groups/supervision-groups.component';
+import { AssignEvaluatorsComponent } from './assign-evaluators/assign-evaluators.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SupervisionGroupsComponent } from './supervision-groups/supervision-gro
     CreateuserformComponent,
     ProjectProposalsComponent,
     SupervisionGroupsComponent,
+    AssignEvaluatorsComponent,
  
 
   ],

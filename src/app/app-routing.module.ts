@@ -1,5 +1,6 @@
 import { QueryManagementComponent } from './query-management/query-management.component';
 import { CordinatorDashboardComponent } from './cordinator-dashboard/cordinator-dashboard.component';
+import { AssignEvaluatorsComponent } from './assign-evaluators/assign-evaluators.component';
 import { StudentProposalComponent } from './student-proposal/student-proposal.component';
 import { StudentQuerriesComponent } from './student-querries/student-querries.component';
 import { SupervisorDashboardComponent } from './supervisor-dashboard/supervisor-dashboard.component';
@@ -49,13 +50,24 @@ const routes: Routes = [
   {
     path: "student-querries",
     component: StudentQuerriesComponent,
-  }, {
+  }, 
+  
+  {
     path: 'student-proposal',
     component: StudentProposalComponent
-  }, {
+  }, 
+  
+  {
     path: 'cordinator-dashboard',
     component: CordinatorDashboardComponent
   },
+
+  {
+    path: 'assign-evaluators',
+    component: AssignEvaluatorsComponent
+  },
+
+
   {
     path: 'query-management',
     component: QueryManagementComponent
