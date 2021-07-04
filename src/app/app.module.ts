@@ -39,6 +39,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ProjectProposalsComponent } from './project-proposals/project-proposals.component';
 import { SupervisionGroupsComponent } from './supervision-groups/supervision-groups.component';
 import { AssignEvaluatorsComponent } from './assign-evaluators/assign-evaluators.component';
+import { SupervisionGroupdetailComponent } from './supervision-groupdetail/supervision-groupdetail.component';
+import { EvaluationFormComponent } from './evaluation-form/evaluation-form.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { EvaluationGroupdetailComponent } from './evaluation-groupdetail/evaluation-groupdetail.component';
+
+
 
 @NgModule({
   declarations: [
@@ -50,6 +56,12 @@ import { AssignEvaluatorsComponent } from './assign-evaluators/assign-evaluators
     ProjectProposalsComponent,
     SupervisionGroupsComponent,
     AssignEvaluatorsComponent,
+    SupervisionGroupdetailComponent,
+    EvaluationFormComponent,
+    ProjectDetailComponent,
+    EvaluationGroupdetailComponent,
+    
+    
  
 
   ],

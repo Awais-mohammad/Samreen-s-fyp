@@ -1,12 +1,15 @@
 import { QueryManagementComponent } from './query-management/query-management.component';
 import { CordinatorDashboardComponent } from './cordinator-dashboard/cordinator-dashboard.component';
 import { AssignEvaluatorsComponent } from './assign-evaluators/assign-evaluators.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { StudentProposalComponent } from './student-proposal/student-proposal.component';
 import { StudentQuerriesComponent } from './student-querries/student-querries.component';
 import { SupervisorDashboardComponent } from './supervisor-dashboard/supervisor-dashboard.component';
 import { ProjectProposalsComponent } from './project-proposals/project-proposals.component';
 import { SupervisionGroupsComponent } from './supervision-groups/supervision-groups.component';
+import {SupervisionGroupdetailComponent } from './supervision-groupdetail/supervision-groupdetail.component';
 import { EvaluatorDashboardComponent } from './evaluator-dashboard/evaluator-dashboard.component';
+import { EvaluationGroupdetailComponent } from './evaluation-groupdetail/evaluation-groupdetail.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 
@@ -42,11 +45,21 @@ const routes: Routes = [
     path: "evaluator-dashboard",
     component: EvaluatorDashboardComponent,
   },
-
+{
+    path: "evaluation-groupdetail",
+    component: EvaluationGroupdetailComponent,
+},
+  
   {
     path: "supervisor-dashboard",
     component: SupervisorDashboardComponent,
   },
+  
+  {
+    path: "supervision-groupdetail",
+    component: SupervisionGroupdetailComponent,
+  },
+
   {
     path: "student-querries",
     component: StudentQuerriesComponent,
@@ -65,6 +78,10 @@ const routes: Routes = [
   {
     path: 'assign-evaluators',
     component: AssignEvaluatorsComponent
+  },
+  {
+    path: 'project-detail',
+    component: ProjectDetailComponent
   },
 
 

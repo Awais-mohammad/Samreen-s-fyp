@@ -1,29 +1,30 @@
+
+
 <app-main-nav>
- <mat-card class="box1">
-    <h1>
 
-        Proposal Submission
+    <div class="card-wrap card-2">
+        
+      
+      <div style="width: 40%;padding: 20px;" class="card card-2">
+        <h1 style="font-weight:bold">Proposal </h1>
+        <div style="padding-top: 1em;">
+          <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+              Template
+          </h4>
+        </div>
+        
+        <input (change)="selectFile($event)" type="file" id="myfile" name="myfile"><br><br>
+        <div class="text-center">
+          <br>
+          <button  style="width:7em" type="submit" class="btn btn-primary" mat-raised-button color="warn">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+    <div>
+  
+    </div>
+  
+  </app-main-nav>
 
-    </h1>
 
- </mat-card>
- <mat-card class="box2">
-            <h1>
-    
-                Proposal 
-    
-            </h1>
-            
-            <h3>Attach Proposal Document </h3>
-            
-<div class= "i">
-                <input (change)="selectFile($event)" type="file">
-            </div>
-                <div class="spacing2">
-
-                </div>
-    
-            <button (click)="submit()" mat-raised-button color="warn">Submit PROPOSAL</button>
- 
-        </mat-card>
-</app-main-nav>

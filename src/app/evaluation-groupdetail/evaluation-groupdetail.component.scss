@@ -214,10 +214,7 @@ form {
 .button:hover {
     background-color: rgba(0, 150, 136, 0.8);
 }
-.pt10 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+
 .df {
     display: flex;
     width: 100%;
@@ -241,5 +238,13 @@ table {
     border-collapse: collapse;
 }
 .tr1{
+  text-align: center;
+}
+.tablehead1{
+
+  font-size:large;
+  font-family: "Open Sans ", sans-serif;
+}
+.pt{
     text-align: center;
 }

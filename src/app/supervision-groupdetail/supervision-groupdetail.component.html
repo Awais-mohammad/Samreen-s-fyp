@@ -1,0 +1,136 @@
+<app-main-nav>
+  <mat-card class="cardd">
+
+      <div class="df">
+
+          <h1 class="h1">
+              Supervision Group Detail
+          </h1>
+
+          <button  mat-mini-fab>
+            <mat-icon>home</mat-icon>
+        </button>
+      </div>
+
+      <hr>
+
+     
+      <br>
+
+      <h1 class="pt">UIIT Automation</h1>
+      <table>
+          <tr>
+
+            <th class="tablehead">
+              Reg. #
+            </th>
+              <th class="tablehead">
+                  Group Members
+              </th>
+
+              <th class="tablehead">
+                Contact 
+              </th>
+
+              <th class="tablehead">
+                E-mail 
+              </th>
+
+
+              <th class="tablehead">
+                 Presentation 1
+              </th>
+
+              <th class="tablehead">
+                  Presentation 2
+              </th>
+
+              <th class="tablehead">
+                Action
+            </th>
+
+
+          </tr>
+
+          <tr class="tr1">
+            
+            <td>
+              17-Arid-2059
+            
+            </td>
+            <td>
+              Zunair Rashid
+            
+            </td>
+
+            
+            <td>
+              445545454545454  
+          </td>
+          <td>
+             
+            Zunair545@gmail.com
+          
+          </td>
+
+            <td>
+                7  
+            </td>
+
+            <td>
+                9
+            </td>
+            <td>
+              <button (click)="openDialog({id: '1', number: '2', user: 'supervisor'})" class="btn" mat-raised-button color="primary">Evaluate</button>
+            </td>
+
+          </tr>
+          <tr class="tr1">
+
+            <td>
+              17-Arid-2058
+            
+            </td>
+
+            <td>
+              Huzaifa
+            
+            </td>
+            <td>
+              445545454545454  
+          </td>
+          <td>
+             
+            huzaifa@gmail.com
+          
+          </td>
+
+            <td>
+                8  
+            </td>
+
+            <td>
+                7
+            </td>
+            
+            <td>
+
+              <!-- <button (click)="openDialog('Evaluate')" color="primary" mat-flat-button>
+                <mat-icon>add_circle</mat-icon>
+                ADD NEW
+            </button> -->
+              <button (click)="openDialog({id: '1', number: '2', user: 'Supervisor'})" class="btn" mat-raised-button color="primary">Evaluate</button>
+            </td>
+                
+          
+
+
+          </tr>
+          
+
+      </table>
+      
+
+
+  </mat-card>
+</app-main-nav>

@@ -47,7 +47,6 @@ export class StudentDashboardComponent implements OnInit {
 
   availablepartners() {
     this.firestore.collection('users', q => q.where('batch', '==', this.studentData.Df.sn.proto.mapValue.fields.batch.stringValue)
-      .where('shift', '==', this.studentData.Df.sn.proto.mapValue.fields.shift.stringValue)
       .where('program', '==', this.studentData.Df.sn.proto.mapValue.fields.program.stringValue)).valueChanges().subscribe((data: any) => {
         if (data.length < 1) {
           console.log('no one found');

@@ -6,7 +6,7 @@
       <div class="df">
   
           <h1 class="h1">
-               Projects Details
+               Projects 
           </h1>
       </div>
   
@@ -30,6 +30,10 @@
               <th class="tablehead">
                   Project Title
               </th>
+              
+                <th class="tablehead">
+                Proposal
+                </th>
   
               <th class="tablehead">
                   Member 1
@@ -55,15 +59,20 @@
   
   
           </tr>
-          <tr>
+          <tr class="tr1">
               <td>UIIT Automation</td>
+              <td>Document</td>
               <td>Zunair</td>
               <td>Huzaifa</td>
               <td></td>
               <td>Dr. Kashif</td>
               <td>
-                <button  mat-raised-button color="primary">View Project</button>
-                <button  mat-raised-button color="accent">Evaluators</button>
+                <a routerLink="/project-detail">
+                    <button  mat-raised-button color="primary"> View Project</button>
+                </a>
+                <a routerLink="/assign-evaluators">
+                    <button style="margin-left: 5px;"  mat-raised-button color="accent">Evaluators</button>
+                </a>
               </td>
               
           </tr>

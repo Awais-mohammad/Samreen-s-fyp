@@ -3,11 +3,11 @@ import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { EvaluationFormComponent } from "../evaluation-form/evaluation-form.component";
 
 @Component({
-  selector: 'app-evaluator-dashboard',
-  templateUrl: './evaluator-dashboard.component.html',
-  styleUrls: ['./evaluator-dashboard.component.scss']
+  selector: 'app-evaluation-groupdetail',
+  templateUrl: './evaluation-groupdetail.component.html',
+  styleUrls: ['./evaluation-groupdetail.component.scss']
 })
-export class EvaluatorDashboardComponent implements OnInit {
+export class EvaluationGroupdetailComponent implements OnInit {
 
   constructor(private dialog: MatDialog,) { }
 
@@ -16,7 +16,7 @@ export class EvaluatorDashboardComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.height = '700px';
+    dialogConfig.height = '500px';
     dialogConfig.width = '500px';
     dialogConfig.data = data;
     this.dialog.open(EvaluationFormComponent, dialogConfig);

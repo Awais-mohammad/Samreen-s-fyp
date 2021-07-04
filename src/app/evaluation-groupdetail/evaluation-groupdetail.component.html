@@ -1,0 +1,134 @@
+<app-main-nav>
+  <mat-card class="cardd">
+
+      <div class="df">
+
+          <h1 class="h1">
+              Evaluation Group Detail
+          </h1>
+
+          <button  mat-mini-fab>
+            <mat-icon>home</mat-icon>
+        </button>
+      </div>
+
+      <hr>
+
+     
+      <br>
+
+      <h1 class="pt">UIIT Automation</h1>
+      <table>
+          <tr>
+              <th class="tablehead">
+                  Reg. #
+              </th>
+
+              <th class="tablehead">
+                  Group Members
+              </th>
+
+              <th class="tablehead">
+                 Proposal
+              </th>
+
+              <th class="tablehead">
+                Contact
+              </th>
+              
+              <th class="tablehead">
+                E-mail 
+              </th>
+
+              <th class="tablehead">
+                Evaluate
+            </th>
+
+
+          </tr>
+
+          <tr class="tr1">
+
+            <td>
+              17-Arid-2059
+            
+            </td>
+
+
+            <td>
+              Zunair Rashid
+            
+            </td>
+
+            <td>
+              Proposal Document
+            </td>
+
+            <td>
+              454545464
+            </td>
+            <td>
+             
+              Zunair545@gmail.com
+            
+            </td>
+
+            
+            <td>
+              <button (click)="openDialog({id: '1', number: '2', user: 'supervisor'})" class="btn" mat-raised-button color="primary">Proposal </button>
+
+              <button (click)="openDialog({id: '1', number: '2', user: 'supervisor'})" style="margin-left: 5px;" class="btn" mat-raised-button color="accent">Mid </button>
+
+              <button (click)="openDialog({id: '1', number: '2', user: 'supervisor'})" style="margin-left: 5px;" class="btn" mat-raised-button color="warn">Final </button>
+            </td>
+
+            
+
+          </tr>
+          <tr class="tr1">
+
+            <td>
+              17-Arid-2058
+            
+            </td>
+
+            <td>
+              Huzaifa
+            
+            </td>
+
+            <td>
+              Proposal Document
+            </td>
+
+            <td>
+              4545454654
+            </td>
+            <td>
+             
+              huzaifa@gmail.com
+            
+            </td>
+            
+           <td>
+
+              
+            <button (click)="openDialog({id: '1', number: '2', user: 'supervisor'})" class="btn" mat-raised-button color="primary">Proposal </button>
+
+            <button (click)="openDialog({id: '1', number: '2', user: 'supervisor'})" style="margin-left: 5px;" class="btn" mat-raised-button color="accent">Mid </button>
+
+            <button (click)="openDialog({id: '1', number: '2', user: 'supervisor'})" style="margin-left: 5px;" class="btn" mat-raised-button color="warn">Final </button>
+            </td> 
+                
+          
+
+
+          </tr>
+          
+
+      </table>
+      
+
+
+  </mat-card>
+</app-main-nav>
