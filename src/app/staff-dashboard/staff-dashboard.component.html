@@ -1,27 +1,26 @@
 <app-main-nav>
+    <mat-card class="cardd">
+         <h1 style="font-family:robboto;font-weight: bold;">
+            Queries
+        </h1>
+    <div style="padding: 10px;text-align: center; ">
 
-    <div style="padding: 10px;position: absolute;top: 20%;width: 96%;">
+        <div *ngIf="alldata">
 
-        <table *ngIf="alldata">
+        <table>
             <tr>
 
-
-
-
                 <th class="tablehead">
-                    DOCUMENT ID
+                    Query For
+                </th>
+                <th class="tablehead">
+                    Query From
                 </th>
 
                 <th class="tablehead">
-                    Queried AT
+                    Document
                 </th>
-
-                <th class="tablehead">
-                    Query FOr
-                </th>
-
-                <th class="tablehead">
-                    ACTION </th>
+                
 
 
 
@@ -30,25 +29,15 @@
             <tr *ngFor="let item of alldata">
 
 
-
-
-                <td>
-                    {{item.docID}}
-                </td>
-
-                <td>
-                    {{item.queriedAt}}
-                </td>
-
-
                 <td>
                     {{item.queryFor}}
                 </td>
 
+                <td> {{item.queryFrom}}</td>
 
                 <td>
-                    <a target="_blank" href="{{item.file}}">
-                        <button mat-raised-button color="primary">VIEW</button>
+                    <a href="{{item.file}}" target="_blank" >
+                        <button mat-raised-button color="primary">View Document</button>
                     </a>
 
                 </td>
@@ -58,6 +47,10 @@
 
         </table>
 
+        </div>
+
     </div>
+    </mat-card>
 
 </app-main-nav>
+

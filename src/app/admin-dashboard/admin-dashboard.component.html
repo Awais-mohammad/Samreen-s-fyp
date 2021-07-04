@@ -147,10 +147,6 @@
                     </th>
 
                     <th class="tablehead">
-                        Created At
-                    </th>
-
-                    <th class="tablehead">
                         Year
                     </th>
 
@@ -161,11 +157,10 @@
 
 
                 </tr>
-                <tr *ngFor="let item of admins">
+                <tr style="text-align: center;" *ngFor="let item of admins">
                     <td>{{item.name}}</td>
                     <td>{{item.email}}</td>
                     <td>{{item.phone}}</td>
-                    <td>{{item.timestamp}}</td>
                     <td>{{item.year}}</td>
                     <td style="text-align: center;">
                         <button color="warn" (click)="deleteuser(item.userID)" mat-mini-fab>
@@ -230,10 +225,6 @@
                     </th>
 
                     <th class="tablehead">
-                        Created At
-                    </th>
-
-                    <th class="tablehead">
                         Year
                     </th>
 
@@ -244,11 +235,10 @@
 
 
                 </tr>
-                <tr *ngFor="let item of cordinators">
+                <tr style="text-align: center;" *ngFor="let item of cordinators">
                     <td>{{item.name}}</td>
                     <td>{{item.email}}</td>
                     <td>{{item.phone}}</td>
-                    <td>{{item.timestamp}}</td>
                     <td>{{item.year}}</td>
                     <td style="text-align: center;">
                         <button color="warn" (click)="deleteuser(item.userID)" mat-mini-fab>
@@ -313,10 +303,6 @@
                     </th>
 
                     <th class="tablehead">
-                        Created At
-                    </th>
-
-                    <th class="tablehead">
                         Year
                     </th>
 
@@ -327,11 +313,10 @@
 
 
                 </tr>
-                <tr *ngFor="let item of staffs">
+                <tr  style="text-align: center;" *ngFor="let item of staffs">
                     <td>{{item.name}}</td>
                     <td>{{item.email}}</td>
                     <td>{{item.phone}}</td>
-                    <td>{{item.timestamp}}</td>
                     <td>{{item.year}}</td>
                     <td style="text-align: center;">
                         <button color="warn" (click)="deleteuser(item.userID)" mat-mini-fab>
@@ -396,10 +381,6 @@
                     </th>
 
                     <th class="tablehead">
-                        Created At
-                    </th>
-
-                    <th class="tablehead">
                         Year
                     </th>
 
@@ -410,11 +391,10 @@
 
 
                 </tr>
-                <tr *ngFor="let item of supervisors">
+                <tr style="text-align: center;" *ngFor="let item of supervisors">
                     <td>{{item.name}}</td>
                     <td>{{item.email}}</td>
                     <td>{{item.phone}}</td>
-                    <td>{{item.timestamp}}</td>
                     <td>{{item.year}}</td>
                     <td style="text-align: center;">
                         <button color="warn" (click)="deleteuser(item.userID)" mat-mini-fab>
@@ -479,10 +459,6 @@
                     </th>
 
                     <th class="tablehead">
-                        Created At
-                    </th>
-
-                    <th class="tablehead">
                         Year
                     </th>
 
@@ -493,11 +469,10 @@
 
 
                 </tr>
-                <tr *ngFor="let item of evaluators">
+                <tr style="text-align: center;" *ngFor="let item of evaluators">
                     <td>{{item.name}}</td>
                     <td>{{item.email}}</td>
                     <td>{{item.phone}}</td>
-                    <td>{{item.timestamp}}</td>
                     <td>{{item.year}}</td>
                     <td style="text-align: center;">
                         <button color="warn" (click)="deleteuser(item.userID)" mat-mini-fab>
@@ -547,7 +522,9 @@
 
             <table>
                 <tr>
-
+                    <th class="tablehead">
+                        Registration No
+                    </th>
 
                     <th class="tablehead">
                         NAME
@@ -561,12 +538,9 @@
                         Phone
                     </th>
 
+                    
                     <th class="tablehead">
-                        Created At
-                    </th>
-
-                    <th class="tablehead">
-                        Registration No
+                        Program
                     </th>
 
                     <th class="tablehead">
@@ -584,12 +558,14 @@
 
 
                 </tr>
-                <tr *ngFor="let item of students">
+                <tr style="text-align: center;" *ngFor="let item of students">
+                    <td>{{item.regNo}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.email}}</td>
                     <td>{{item.phone}}</td>
-                    <td>{{item.timestamp}}</td>
-                    <td>{{item.regNo}}</td>
+                    
+                    <td>{{item.program}}</td>
+                    
                     <td>{{item.shift}}</td>
                     <td>{{item.year}}</td>
                     <td style="text-align: center;">
