@@ -278,15 +278,17 @@ text-align: center;
     border-right: none;
     border-left: none;
     border-bottom: none;
+    border-top: none;
+    margin-top: 0px;
 
-    .th1{
+    .td1{
       border-left: none;
       border-bottom: none;
       border-top: none;
 
     }
 
-    .th2{
+    .td2{
       border-right: none;
       border-bottom: none;
       border-left: none;
